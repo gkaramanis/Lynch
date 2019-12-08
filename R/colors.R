@@ -17,9 +17,8 @@ lynch_palettes <- list(
 #'
 #' Color palettes from David Lynch films.
 #'
-#' @param n Number of colors desired. Most palettes now only
-#'   have 5 to 8 colors. Most color
-#'   schemes are derived from \href{http://poppygall.com/blog/2011/07/25/color-inspiration-national-park-wpa-posters/}{Color Inspiration – National Park WPA Posters}.
+#' @param n Number of colors desired. All palettes have 5 colors. Most color
+#'   schemes are derived from \href{https://www.pinterest.se/pin/151152131226891232/}{this Pin on Pinterest}.
 #'   If omitted, uses all colours.
 #' @param name Name of desired palette. Choices are:
 #'   \code{twin_peaks}, \code{blue_velvet},  \code{dune}
