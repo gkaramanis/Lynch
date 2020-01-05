@@ -21,7 +21,7 @@ lynch_palettes <- list(
 #'   schemes are derived from \href{https://www.pinterest.se/pin/151152131226891232/}{this Pin on Pinterest}.
 #'   If omitted, uses all colours.
 #' @param name Name of desired palette. Choices are:
-#'   \code{twin_peaks}, \code{blue_velvet},  \code{dune}
+#'   \code{blue_velvet}, \code{dune},  \code{lost_highway},  \code{mullholland_drive},  \code{twin_peaks},  \code{wild_at_heart}
 #'   @importFrom graphics rgb rect par image text
 #' @return A vector of colours.
 #' @export
