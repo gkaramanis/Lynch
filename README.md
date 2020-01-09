@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of Lynch is to ...
+Color palettes from David Lynch films.
 
 ## Installation
 
@@ -16,7 +16,8 @@ install.packages("Lynch")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+lynch_palette("twin_peaks")
+lynch_palette("blue_velvet", 3)
 
 ``` r
 library(Lynch)
