@@ -8,8 +8,7 @@ lynch_palette(name, n)
 }
 \arguments{
 \item{name}{Name of desired palette. Choices are:
-\code{blue_velvet}, \code{dune},  \code{lost_highway},  \code{mullholland_drive},  \code{twin_peaks},  \code{wild_at_heart}
-@importFrom graphics rgb rect par image text}
+\code{blue_velvet}, \code{dune},  \code{lost_highway},  \code{mullholland_drive},  \code{twin_peaks},  \code{wild_at_heart}.}
 
 \item{n}{Number of colors desired. All palettes have 5 colors. Most color
 schemes are derived from \href{https://www.pinterest.se/pin/151152131226891232/}{this Pin on Pinterest}.
