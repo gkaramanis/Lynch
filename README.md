@@ -8,7 +8,7 @@ Color palettes from David Lynch films.
 
 ## Installation
 
-You can install the released version of Lynch from [github](https://CRAN.R-project.org) with:
+You can install the released version of **Lynch** from GitHub with:
 
 ``` r
 devtools::install_github("gkaramanis/Lynch")
