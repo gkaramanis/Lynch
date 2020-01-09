@@ -16,7 +16,7 @@ install.packages("Lynch")
 
 ## Example
 
-lynch_palette("twin_peaks")
+lynch_palette("twin_peaks")  
 lynch_palette("blue_velvet", 3)
 
 ``` r
