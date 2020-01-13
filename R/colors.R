@@ -15,6 +15,7 @@ lynch_palettes <- list(
 
 #' A David Lynch palette generator
 #'
+#' ![](sticker.png "Lynch sticker")
 #' Color palettes from David Lynch films.
 #'
 #' @param n Number of colors desired. All palettes have 5 colors. Most color

@@ -18,6 +18,7 @@ If omitted, uses all colours.}
 A vector of colours.
 }
 \description{
+![](sticker.png "Lynch sticker")
 Color palettes from David Lynch films.
 }
 \examples{
