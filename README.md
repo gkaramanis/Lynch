@@ -21,9 +21,14 @@ devtools::install_github("gkaramanis/Lynch")
 ``` r
 library(Lynch)  
 
-lynch_palette("twin_peaks")  
-![](/docs/reference/lynch_palette-1.png)  
-lynch_palette("blue_velvet", 3)
-![](/docs/reference/lynch_palette-2.png)  
+lynch_palette("twin_peaks") 
 ```
+![](/docs/reference/lynch_palette-1.png)  
+
+``` r
+lynch_palette("blue_velvet", 3)
+```
+![](/docs/reference/lynch_palette-2.png)  
+
+
 
