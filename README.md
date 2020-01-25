@@ -30,5 +30,10 @@ lynch_palette("blue_velvet", 3)
 ```
 ![](/docs/reference/lynch_palette-2.png)  
 
-
-
+All the palettes:
+![](/docs/reference/blue_velvet.png)
+![](/docs/reference/dune.png)
+![](/docs/reference/lost_highway.png)
+![](/docs/reference/mullholland_drive.png)
+![](/docs/reference/twin_peaks.png)
+![](/docs/reference/wild_at_heart.png)
