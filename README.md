@@ -30,7 +30,7 @@ lynch_palette("blue_velvet", 3)
 ```
 ![](/docs/reference/lynch_palette-2.png)  
 
-All the palettes:
+## Available palettes:
 ![](/docs/reference/blue_velvet.png)
 ![](/docs/reference/dune.png)
 ![](/docs/reference/lost_highway.png)
