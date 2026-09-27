@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Lynch</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3.0</span>
       </span>
     </div>
 
@@ -47,6 +47,12 @@
       <small>Source: <a href="https://github.com/gkaramanis/Lynch/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.3.0" id="lynch-030">Lynch 0.3.0<a class="anchor" aria-label="anchor" href="#lynch-030"></a></h2>
+<ul><li>Colour-blind-safe variants of five palettes: <code>blue_velvet_safe</code>, <code>dune_safe</code>, <code>mulholland_drive_safe</code>, <code>twin_peaks_safe</code> and <code>wild_at_heart_safe</code>. Each keeps the three or four colours of the film’s palette that stay distinct with red-green colour blindness. <code>lost_highway</code> already passes as it is.</li>
+<li>New sequential ramps (<code>lynch_sequential</code>, one per film) and diverging ramps (<code>lynch_diverging</code>, for four films). <code><a href="../reference/lynch_palette.html">lynch_palette()</a></code> gains <code>type = "sequential"</code> and <code>type = "diverging"</code> and interpolates ramps to any <code>n</code>.</li>
+<li>New <code>lynch_accessibility</code>: colour-blindness test results for every discrete palette.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.0" id="lynch-020">Lynch 0.2.0<a class="anchor" aria-label="anchor" href="#lynch-020"></a></h2>
 <ul><li>The Mulholland Drive palette is now <code>mulholland_drive</code>. The old spelling, <code>mullholland_drive</code>, still works with a deprecation warning.</li>

@@ -1,16 +1,47 @@
 #' Complete list of palettes
 #'
-#' Use \code{\link{lynch_palette}} to construct palettes of desired length.
+#' `lynch_palettes` holds the discrete palettes, five colours each. The
+#' `*_safe` palettes keep the three or four colours of a film's palette that
+#' stay distinct with red-green colour blindness; `lost_highway` already does.
+#' `lynch_sequential` holds seven-step light-to-dark ramps in one hue per film,
+#' and `lynch_diverging` nine-step ramps between two of a film's colours
+#' through neutral grey. See [lynch_accessibility] for the test results.
+#'
+#' Use [lynch_palette()] to pick colours from any of them.
 #'
 #' @export
-
 lynch_palettes <- list(
   blue_velvet = c("#2220BD", "#CF3C3D", "#523235", "#C1C6E7", "#333055"),
   dune = c("#1A1454", "#CAAE51", "#8C7573", "#928FA1", "#840F38"),
-  lost_highway = c("#DAE9E9", "#F2D85D", "#C0A4AE","#3C2826", "#4F85B8"),
+  lost_highway = c("#DAE9E9", "#F2D85D", "#C0A4AE", "#3C2826", "#4F85B8"),
   mulholland_drive = c("#3D87B5", "#000235", "#907978", "#AC3539", "#545671"),
   twin_peaks = c("#332F2F", "#E74F4F", "#47A54E", "#74BDB7", "#F9E9E9"),
-  wild_at_heart = c("#CD5C90", "#E5BF5C", "#73364F", "#9F8A5A", "#515767")
+  wild_at_heart = c("#CD5C90", "#E5BF5C", "#73364F", "#9F8A5A", "#515767"),
+  blue_velvet_safe = c("#2220BD", "#CF3C3D", "#C1C6E7", "#333055"),
+  dune_safe = c("#1A1454", "#CAAE51", "#8C7573", "#840F38"),
+  mulholland_drive_safe = c("#3D87B5", "#000235", "#AC3539", "#545671"),
+  twin_peaks_safe = c("#332F2F", "#E74F4F", "#74BDB7"),
+  wild_at_heart_safe = c("#CD5C90", "#E5BF5C", "#73364F")
+)
+
+#' @rdname lynch_palettes
+#' @export
+lynch_sequential <- list(
+  blue_velvet = c("#DEEDFF", "#B1C7FF", "#87A1F6", "#5F7BE4", "#3B53D1", "#211FBC", "#130085"),
+  dune = c("#FFE4E9", "#EFB9C2", "#D5909C", "#BA6778", "#9E3E55", "#800C35", "#55001C"),
+  lost_highway = c("#FFEF83", "#E2CA58", "#BAA64B", "#94843E", "#6F6431", "#4C4525", "#2C2918"),
+  mulholland_drive = c("#CEF4FF", "#A0D0F2", "#73AED5", "#458CB9", "#2B6A91", "#174A68", "#042C42"),
+  twin_peaks = c("#FFD1CA", "#FFA49D", "#FD7671", "#DD4A4A", "#AA3435", "#7B1E20", "#4E0A0E"),
+  wild_at_heart = c("#FFD6F2", "#FFABCF", "#E681AC", "#C6588B", "#994069", "#6E2949", "#45132B")
+)
+
+#' @rdname lynch_palettes
+#' @export
+lynch_diverging <- list(
+  blue_velvet = c("#211FBD", "#6C51CA", "#9C83D7", "#C5B7E2", "#ECECEC", "#EDC3BD", "#E89990", "#DD6D65", "#CE3B3D"),
+  mulholland_drive = c("#3D86B4", "#719FC3", "#9CB8D1", "#C5D2DF", "#ECECEC", "#E3BFBC", "#D4928D", "#C26561", "#AC3439"),
+  twin_peaks = c("#73BDB7", "#94C9C4", "#B2D5D1", "#CFE1DF", "#ECECEC", "#F3C7C3", "#F3A29A", "#EF7B73", "#E64E4E"),
+  wild_at_heart = c("#72354E", "#926173", "#B08E9A", "#CFBCC2", "#ECECEC", "#DAD3C6", "#C7BAA1", "#B3A17D", "#9F8A59")
 )
 
 #' A David Lynch palette generator
@@ -18,26 +49,40 @@ lynch_palettes <- list(
 #' ![](sticker.png "Lynch sticker")
 #' Color palettes from David Lynch films.
 #'
-#' @param n Number of colors desired. All palettes have 5 colors. Most color
-#'   schemes are derived from \href{https://www.pinterest.se/pin/151152131226891232/}{this Pin on Pinterest}.
-#'   If omitted, uses all colours.
-#' @param name Name of desired palette. Choices are:
-#'   \code{blue_velvet}, \code{dune},  \code{lost_highway},  \code{mulholland_drive},  \code{twin_peaks},  \code{wild_at_heart}.
+#' @param name Name of the palette, such as `"twin_peaks"` or
+#'   `"twin_peaks_safe"`. See `names(lynch_palettes)`, `names(lynch_sequential)`
+#'   and `names(lynch_diverging)`.
+#' @param n Number of colours. If omitted, uses all colours. Discrete palettes
+#'   offer at most their own colours; sequential and diverging ramps are
+#'   interpolated to any `n`. Most discrete colour schemes are derived from
+#'   \href{https://www.pinterest.se/pin/151152131226891232/}{this Pin on Pinterest}.
+#' @param type `"discrete"` for categories, `"sequential"` for ordered values,
+#'   `"diverging"` for values either side of a midpoint.
 #' @return A vector of colours.
 #' @export
 #' @keywords colors
 #' @examples
 #' lynch_palette("twin_peaks")
 #' lynch_palette("blue_velvet", 3)
+#' lynch_palette("twin_peaks_safe")
+#' lynch_palette("dune", 12, type = "sequential")
+#' lynch_palette("mulholland_drive", type = "diverging")
 
-lynch_palette <- function(name, n) {
+lynch_palette <- function(name, n, type = c("discrete", "sequential", "diverging")) {
+  type <- match.arg(type)
+
   # Misspelled before 0.2.0; still accepted.
   if (identical(name, "mullholland_drive")) {
     warning('"mullholland_drive" is deprecated; use "mulholland_drive".', call. = FALSE)
     name <- "mulholland_drive"
   }
 
-  pal <- lynch_palettes[[name]]
+  pals <- switch(type,
+    discrete = lynch_palettes,
+    sequential = lynch_sequential,
+    diverging = lynch_diverging
+  )
+  pal <- pals[[name]]
   if (is.null(pal))
     stop("Palette not found.")
 
@@ -45,11 +90,15 @@ lynch_palette <- function(name, n) {
     n <- length(pal)
   }
 
-  if (n > length(pal)) {
-    stop("Number of requested colors greater than what palette can offer")
+  if (type == "discrete") {
+    if (n > length(pal)) {
+      stop("Number of requested colors greater than what palette can offer")
+    }
+    out <- pal[seq_len(n)]
+  } else {
+    out <- grDevices::colorRampPalette(pal, space = "Lab")(n)
   }
 
-  out <- pal[1:n]
   structure(out, class = "palette", name = name)
 }
 

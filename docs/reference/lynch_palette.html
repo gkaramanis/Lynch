@@ -18,7 +18,7 @@ Color palettes from David Lynch films.'><!-- mathjax --><script src="https://cdn
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Lynch</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3.0</span>
       </span>
     </div>
 
@@ -55,7 +55,7 @@ Color palettes from David Lynch films.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">lynch_palette</span><span class="op">(</span><span class="va">name</span>, <span class="va">n</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">lynch_palette</span><span class="op">(</span><span class="va">name</span>, <span class="va">n</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"discrete"</span>, <span class="st">"sequential"</span>, <span class="st">"diverging"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -63,14 +63,21 @@ Color palettes from David Lynch films.</p>
 
 
 <dl><dt id="arg-name">name<a class="anchor" aria-label="anchor" href="#arg-name"></a></dt>
-<dd><p>Name of desired palette. Choices are:
-<code>blue_velvet</code>, <code>dune</code>,  <code>lost_highway</code>,  <code>mulholland_drive</code>,  <code>twin_peaks</code>,  <code>wild_at_heart</code>.</p></dd>
+<dd><p>Name of the palette, such as `"twin_peaks"` or
+`"twin_peaks_safe"`. See `names(lynch_palettes)`, `names(lynch_sequential)`
+and `names(lynch_diverging)`.</p></dd>
 
 
 <dt id="arg-n">n<a class="anchor" aria-label="anchor" href="#arg-n"></a></dt>
-<dd><p>Number of colors desired. All palettes have 5 colors. Most color
-schemes are derived from <a href="https://www.pinterest.se/pin/151152131226891232/" class="external-link">this Pin on Pinterest</a>.
-If omitted, uses all colours.</p></dd>
+<dd><p>Number of colours. If omitted, uses all colours. Discrete palettes
+offer at most their own colours; sequential and diverging ramps are
+interpolated to any `n`. Most discrete colour schemes are derived from
+<a href="https://www.pinterest.se/pin/151152131226891232/" class="external-link">this Pin on Pinterest</a>.</p></dd>
+
+
+<dt id="arg-type">type<a class="anchor" aria-label="anchor" href="#arg-type"></a></dt>
+<dd><p>`"discrete"` for categories, `"sequential"` for ordered values,
+`"diverging"` for values either side of a midpoint.</p></dd>
 
 </dl></div>
     <div id="value">
@@ -84,6 +91,12 @@ If omitted, uses all colours.</p></dd>
 <span class="r-plt img"><img src="lynch_palette-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span><span class="fu">lynch_palette</span><span class="op">(</span><span class="st">"blue_velvet"</span>, <span class="fl">3</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="lynch_palette-2.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span><span class="fu">lynch_palette</span><span class="op">(</span><span class="st">"twin_peaks_safe"</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="lynch_palette-3.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span><span class="fu">lynch_palette</span><span class="op">(</span><span class="st">"dune"</span>, <span class="fl">12</span>, type <span class="op">=</span> <span class="st">"sequential"</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="lynch_palette-4.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span><span class="fu">lynch_palette</span><span class="op">(</span><span class="st">"mulholland_drive"</span>, type <span class="op">=</span> <span class="st">"diverging"</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="lynch_palette-5.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
   </div>

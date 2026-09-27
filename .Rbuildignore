@@ -4,3 +4,4 @@
 ^stickerLynch\.png$
 ^_pkgdown\.yml$
 ^pkgdown$
+^data-raw$

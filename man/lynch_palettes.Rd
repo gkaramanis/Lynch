@@ -2,10 +2,24 @@
 % Please edit documentation in R/colors.R
 \name{lynch_palettes}
 \alias{lynch_palettes}
+\alias{lynch_sequential}
+\alias{lynch_diverging}
 \title{Complete list of palettes}
 \usage{
 lynch_palettes
+
+lynch_sequential
+
+lynch_diverging
 }
 \description{
-Use \code{\link{lynch_palette}} to construct palettes of desired length.
+`lynch_palettes` holds the discrete palettes, five colours each. The
+`*_safe` palettes keep the three or four colours of a film's palette that
+stay distinct with red-green colour blindness; `lost_highway` already does.
+`lynch_sequential` holds seven-step light-to-dark ramps in one hue per film,
+and `lynch_diverging` nine-step ramps between two of a film's colours
+through neutral grey. See [lynch_accessibility] for the test results.
+}
+\details{
+Use [lynch_palette()] to pick colours from any of them.
 }
