@@ -8,32 +8,31 @@ Color palettes from David Lynch films.
 
 ## Installation
 
-You can install the released version of **Lynch** from GitHub with:
+Install Lynch from GitHub with:
 
 ``` r
-devtools::install_github("gkaramanis/Lynch")
+# install.packages("pak")
+pak::pak("gkaramanis/Lynch")
 ```
 
 ## Example
-
-
 
 ``` r
 library(Lynch)  
 
 lynch_palette("twin_peaks") 
 ```
-![](/docs/reference/lynch_palette-1.png)  
+![Twin Peaks palette: five colour swatches](man/figures/example-twin_peaks.png)  
 
 ``` r
 lynch_palette("blue_velvet", 3)
 ```
-![](/docs/reference/lynch_palette-2.png)  
+![First three colours of the Blue Velvet palette](man/figures/example-blue_velvet-3.png)  
 
-## Available palettes:
-![](/docs/reference/blue_velvet.png)
-![](/docs/reference/dune.png)
-![](/docs/reference/lost_highway.png)
-![](/docs/reference/mullholland_drive.png)
-![](/docs/reference/twin_peaks.png)
-![](/docs/reference/wild_at_heart.png)
+## Available palettes
+![Blue Velvet palette: five colour swatches](man/figures/blue_velvet.png)
+![Dune palette: five colour swatches](man/figures/dune.png)
+![Lost Highway palette: five colour swatches](man/figures/lost_highway.png)
+![Mulholland Drive palette: five colour swatches](man/figures/mulholland_drive.png)
+![Twin Peaks palette: five colour swatches](man/figures/twin_peaks.png)
+![Wild at Heart palette: five colour swatches](man/figures/wild_at_heart.png)

@@ -1,2 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^docs$
+^stickerLynch\.png$
+^_pkgdown\.yml$
+^pkgdown$

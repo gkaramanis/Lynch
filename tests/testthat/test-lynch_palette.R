@@ -19,3 +19,8 @@ test_that("lynch_palette rejects unknown names and too many colours", {
   expect_error(lynch_palette("eraserhead"), "not found")
   expect_error(lynch_palette("dune", 6), "greater than")
 })
+
+test_that("the old mullholland_drive spelling still works, with a warning", {
+  expect_warning(pal <- lynch_palette("mullholland_drive"), "deprecated")
+  expect_equal(unclass(pal), lynch_palettes$mulholland_drive, ignore_attr = TRUE)
+})
