@@ -37,6 +37,23 @@ lynch_palette("blue_velvet", 3)
 ![Twin Peaks palette: five colour swatches](man/figures/twin_peaks.png)
 ![Wild at Heart palette: five colour swatches](man/figures/wild_at_heart.png)
 
+## ggplot2 scales
+
+``` r
+library(ggplot2)
+
+ggplot(mtcars, aes(wt, mpg, colour = factor(cyl))) +
+  geom_point(size = 3) +
+  scale_colour_lynch_d("twin_peaks_safe")
+
+ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_raster() +
+  scale_fill_lynch_c("dune")
+
+# Diverging, centred on zero
+scale_fill_lynch_c("mulholland_drive", type = "diverging", midpoint = 0)
+```
+
 ## Colour-blind-safe palettes
 
 `lynch_accessibility` gives each discrete palette's smallest colour difference, with normal vision and simulated colour blindness. Of the film palettes, only `lost_highway` keeps every colour distinct with red-green colour blindness. The `_safe` palettes keep the colours of each film's palette that do:

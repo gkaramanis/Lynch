@@ -5,6 +5,12 @@ export(lynch_diverging)
 export(lynch_palette)
 export(lynch_palettes)
 export(lynch_sequential)
+export(scale_color_lynch_c)
+export(scale_color_lynch_d)
+export(scale_colour_lynch_c)
+export(scale_colour_lynch_d)
+export(scale_fill_lynch_c)
+export(scale_fill_lynch_d)
 importFrom(grDevices,rgb)
 importFrom(graphics,
   image,
