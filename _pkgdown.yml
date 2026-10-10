@@ -1,0 +1,33 @@
+url: https://gkaramanis.github.io/Lynch/
+
+template:
+  bootstrap: 5
+  bslib:
+    bg: "#FBF8F3"
+    fg: "#1D1B1F"
+    primary: "#CF3C3D"
+    navbar-bg: "#332F2F"
+    border-radius: 0.6rem
+    base_font: {google: "Inter"}
+    heading_font: {google: "DM Serif Display"}
+    code_font: {google: "IBM Plex Mono"}
+
+navbar:
+  bg: dark
+
+home:
+  title: "Lynch: colour palettes from David Lynch films"
+  description: Colour palettes from David Lynch films, with colour-blind-safe cuts and ggplot2 scales.
+
+reference:
+- title: Palettes
+  contents:
+  - lynch_palette
+  - lynch_palettes
+  - lynch_accessibility
+- title: ggplot2 scales
+  contents:
+  - starts_with("scale_")
+- title: Package
+  contents:
+  - Lynch-package

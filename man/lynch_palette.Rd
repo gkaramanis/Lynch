@@ -7,23 +7,24 @@
 lynch_palette(name, n, type = c("discrete", "sequential", "diverging"))
 }
 \arguments{
-\item{name}{Name of the palette, such as `"twin_peaks"` or
-`"twin_peaks_safe"`. See `names(lynch_palettes)`, `names(lynch_sequential)`
-and `names(lynch_diverging)`.}
+\item{name}{Name of the palette, such as \code{"twin_peaks"} or
+\code{"twin_peaks_safe"}. See \code{names(lynch_palettes)}, \code{names(lynch_sequential)}
+and \code{names(lynch_diverging)}.}
 
 \item{n}{Number of colours. If omitted, uses all colours. Discrete palettes
 offer at most their own colours; sequential and diverging ramps are
-interpolated to any `n`. Most discrete colour schemes are derived from
+interpolated to any \code{n}. Most discrete colour schemes are derived from
 \href{https://www.pinterest.se/pin/151152131226891232/}{this Pin on Pinterest}.}
 
-\item{type}{`"discrete"` for categories, `"sequential"` for ordered values,
-`"diverging"` for values either side of a midpoint.}
+\item{type}{\code{"discrete"} for categories, \code{"sequential"} for ordered values,
+\code{"diverging"} for values either side of a midpoint.}
 }
 \value{
-A vector of colours.
+A character vector of hex colours with class \code{palette}. Printing
+it draws the colours as swatches; use \code{\link[=unclass]{unclass()}} for a plain vector.
 }
 \description{
-![](sticker.png "Lynch sticker")
+\figure{sticker.png}{Lynch sticker}
 Color palettes from David Lynch films.
 }
 \examples{
@@ -32,5 +33,12 @@ lynch_palette("blue_velvet", 3)
 lynch_palette("twin_peaks_safe")
 lynch_palette("dune", 12, type = "sequential")
 lynch_palette("mulholland_drive", type = "diverging")
+
+# Plain colours for base graphics
+cols <- unclass(lynch_palette("lost_highway"))
+pie(rep(1, 5), col = cols)
+}
+\seealso{
+\code{\link[=scale_colour_lynch_d]{scale_colour_lynch_d()}} and \code{\link[=scale_colour_lynch_c]{scale_colour_lynch_c()}} for ggplot2.
 }
 \keyword{colors}

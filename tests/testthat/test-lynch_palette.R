@@ -48,3 +48,10 @@ test_that("accessibility table covers every discrete palette", {
   safe <- lynch_accessibility$palette[lynch_accessibility$colourblind_safe]
   expect_true(all(grepl("_safe$", setdiff(safe, "lost_highway"))))
 })
+
+test_that("printing a palette draws it and returns invisibly", {
+  pdf(NULL)
+  on.exit(dev.off())
+  pal <- lynch_palette("dune")
+  expect_identical(expect_invisible(print(pal)), pal)
+})

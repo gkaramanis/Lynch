@@ -4,148 +4,128 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A David Lynch Palette Generator • Lynch</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
-<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="A David Lynch Palette Generator">
-<meta property="og:description" content="Colour palettes from David Lynch films, with colour-blind-safe variants, sequential and diverging ramps, and colour-blindness test results for every discrete palette.">
-<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Lynch: colour palettes from David Lynch films • Lynch</title>
+<script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="deps/Inter-0.4.10/font.css" rel="stylesheet">
+<link href="deps/IBM_Plex_Mono-0.4.10/font.css" rel="stylesheet">
+<link href="deps/DM_Serif_Display-0.4.10/font.css" rel="stylesheet">
+<link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Lynch: colour palettes from David Lynch films">
+<meta name="description" content="Colour palettes from David Lynch films, with colour-blind-safe cuts and ggplot2 scales.">
+<meta property="og:description" content="Colour palettes from David Lynch films, with colour-blind-safe cuts and ggplot2 scales.">
 </head>
-<body data-spy="scroll" data-target="#toc">
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
-    <div class="container template-home">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">Lynch</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.4.0</span>
-      </span>
-    </div>
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark" data-bs-theme="dark" aria-label="Site navigation"><div class="container">
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="reference/index.html">Reference</a>
-</li>
-<li>
-  <a href="news/index.html">Changelog</a>
-</li>
+    <a class="navbar-brand me-2" href="index.html">Lynch</a>
+
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0.9000</small>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-3">
+      <ul class="navbar-nav me-auto">
+<li class="nav-item"><a class="nav-link" href="articles/Lynch.html">Get started</a></li>
+<li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-  <a href="https://github.com/gkaramanis/Lynch/" class="external-link">
-    <span class="fab fa-github fa-lg"></span>
-
-  </a>
-</li>
+<ul class="navbar-nav">
+<li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
+</form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/gkaramanis/Lynch/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
-<!--/.nav-collapse -->
+
+
   </div>
-<!--/.container -->
-</div>
-<!--/.navbar -->
-
-
-
-      </header><div class="row">
-  <div class="contents col-md-9">
-<div class="section level1">
+</nav><div class="container template-home">
+<div class="row">
+  <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="lynch">Lynch<a class="anchor" aria-label="anchor" href="#lynch"></a>
 </h1></div>
 <!-- badges: start -->
-<!-- badges: end -->
-<p>Color palettes from David Lynch films.</p>
+
+<p><img src="reference/figures/banner.png" alt="The Red Room from Twin Peaks: a red curtain over a black-and-white zigzag floor, with the word Lynch." width="100%"></p>
+<p>Colour palettes from the films of David Lynch, for when a bar chart needs a little dread.</p>
+<p>Every film gets five colours. Most also get a colour-blind-safe cut, a sequential ramp for numbers, and sometimes a diverging one. It’s a fun package first, but the scales plug straight into ggplot2, and every palette has been through a colour-blindness simulator.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>Install Lynch from GitHub with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
 <span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"gkaramanis/Lynch"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+<h2 id="quick-start">Quick start<a class="anchor" aria-label="anchor" href="#quick-start"></a>
 </h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/gkaramanis/Lynch" class="external-link">Lynch</a></span><span class="op">)</span>  </span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/gkaramanis/Lynch" class="external-link">Lynch</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="reference/lynch_palette.html">lynch_palette</a></span><span class="op">(</span><span class="st">"twin_peaks"</span><span class="op">)</span> </span></code></pre></div>
-<div class="float">
-<img src="reference/figures/example-twin_peaks.png" alt="Twin Peaks palette: five colour swatches"><div class="figcaption">Twin Peaks palette: five colour swatches</div>
-</div>
+<span><span class="fu"><a href="reference/lynch_palette.html">lynch_palette</a></span><span class="op">(</span><span class="st">"twin_peaks"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/example-twin_peaks.png" alt="The Twin Peaks palette: five swatches with their hex codes." width="100%"></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/lynch_palette.html">lynch_palette</a></span><span class="op">(</span><span class="st">"blue_velvet"</span>, <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
-<div class="float">
-<img src="reference/figures/example-blue_velvet-3.png" alt="First three colours of the Blue Velvet palette"><div class="figcaption">First three colours of the Blue Velvet palette</div>
-</div>
-</div>
-<div class="section level2">
-<h2 id="available-palettes">Available palettes<a class="anchor" aria-label="anchor" href="#available-palettes"></a>
-</h2>
-<p><img src="reference/figures/blue_velvet.png" alt="Blue Velvet palette: five colour swatches"><img src="reference/figures/dune.png" alt="Dune palette: five colour swatches"><img src="reference/figures/lost_highway.png" alt="Lost Highway palette: five colour swatches"><img src="reference/figures/mulholland_drive.png" alt="Mulholland Drive palette: five colour swatches"><img src="reference/figures/twin_peaks.png" alt="Twin Peaks palette: five colour swatches"><img src="reference/figures/wild_at_heart.png" alt="Wild at Heart palette: five colour swatches"></p>
-</div>
-<div class="section level2">
-<h2 id="ggplot2-scales">ggplot2 scales<a class="anchor" aria-label="anchor" href="#ggplot2-scales"></a>
-</h2>
+<p><img src="reference/figures/example-blue_velvet-3.png" alt="The first three colours of Blue Velvet." width="100%"></p>
+<p>Ramps stretch to as many colours as you like:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/lynch_palette.html">lynch_palette</a></span><span class="op">(</span><span class="st">"dune"</span>, <span class="fl">12</span>, type <span class="op">=</span> <span class="st">"sequential"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/lynch_palette.html">lynch_palette</a></span><span class="op">(</span><span class="st">"mulholland_drive"</span>, type <span class="op">=</span> <span class="st">"diverging"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/example-dune-sequential.png" alt="Twelve steps of the Dune sequential ramp, pale pink to deep maroon." width="100%"><img src="reference/figures/example-mulholland_drive-diverging.png" alt="The Mulholland Drive diverging ramp, blue through grey to red." width="100%"></p>
+</div>
+<div class="section level2">
+<h2 id="with-ggplot2">With ggplot2<a class="anchor" aria-label="anchor" href="#with-ggplot2"></a>
+</h2>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">wt</span>, <span class="va">mpg</span>, colour <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">displ</span>, <span class="va">hwy</span>, colour <span class="op">=</span> <span class="va">drv</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/scale_colour_lynch_d.html">scale_colour_lynch_d</a></span><span class="op">(</span><span class="st">"twin_peaks_safe"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">faithfuld</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">waiting</span>, <span class="va">eruptions</span>, fill <span class="op">=</span> <span class="va">density</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html" class="external-link">geom_raster</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="reference/scale_colour_lynch_d.html">scale_fill_lynch_c</a></span><span class="op">(</span><span class="st">"dune"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Diverging, centred on zero</span></span>
-<span><span class="fu"><a href="reference/scale_colour_lynch_d.html">scale_fill_lynch_c</a></span><span class="op">(</span><span class="st">"mulholland_drive"</span>, type <span class="op">=</span> <span class="st">"diverging"</span>, midpoint <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="reference/scale_colour_lynch_d.html">scale_fill_lynch_c</a></span><span class="op">(</span><span class="st">"mulholland_drive"</span>, direction <span class="op">=</span> <span class="op">-</span><span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<p>
+<img src="reference/figures/plot-discrete.png" width="49%" alt="Scatter plot of engine size against highway mileage, coloured by drive type in the Twin Peaks safe palette."><img src="reference/figures/plot-continuous.png" width="49%" alt="Density map of Old Faithful eruptions in the Mulholland Drive ramp, glowing blue on near-black."></p>
+<p><code>_d</code> scales are for categories and <code>_c</code> scales for numbers. For a diverging scale, add <code>type = "diverging"</code> and a <code>midpoint</code>.</p>
 </div>
 <div class="section level2">
-<h2 id="colour-blind-safe-palettes">Colour-blind-safe palettes<a class="anchor" aria-label="anchor" href="#colour-blind-safe-palettes"></a>
+<h2 id="the-palettes">The palettes<a class="anchor" aria-label="anchor" href="#the-palettes"></a>
 </h2>
-<p><code>lynch_accessibility</code> gives each discrete palette’s smallest colour difference, with normal vision and simulated colour blindness. Of the film palettes, only <code>lost_highway</code> keeps every colour distinct with red-green colour blindness. The <code>_safe</code> palettes keep the colours of each film’s palette that do:</p>
-<div class="float">
-<img src="reference/figures/safe.png" alt="The five colour-blind-safe palettes, each with three or four colour swatches."><div class="figcaption">The five colour-blind-safe palettes, each with three or four colour swatches.</div>
-</div>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/lynch_palette.html">lynch_palette</a></span><span class="op">(</span><span class="st">"twin_peaks_safe"</span><span class="op">)</span></span></code></pre></div>
+<p>Most palettes were sampled from stills collected in <a href="https://www.pinterest.se/pin/151152131226891232/" class="external-link">this Pinterest pin</a>. Each film’s title below links to its Wikipedia article, where you can hold the poster up against the colours.</p>
+<p><img src="reference/figures/card-blue_velvet.png" alt="Blue Velvet palette card: five colours, a colour-blind-safe subset, sequential and diverging ramps." width="100%"><a href="https://en.wikipedia.org/wiki/Blue_Velvet_(film)" class="external-link"><strong>Blue Velvet</strong></a> · <code>"blue_velvet"</code></p>
+<p><img src="reference/figures/card-dune.png" alt="Dune palette card: five colours, a colour-blind-safe subset and a sequential ramp." width="100%"><a href="https://en.wikipedia.org/wiki/Dune_(1984_film)" class="external-link"><strong>Dune</strong></a> · <code>"dune"</code></p>
+<p><img src="reference/figures/card-lost_highway.png" alt="Lost Highway palette card: five colours, colour-blind safe as they are, and a sequential ramp." width="100%"><a href="https://en.wikipedia.org/wiki/Lost_Highway_(film)" class="external-link"><strong>Lost Highway</strong></a> · <code>"lost_highway"</code></p>
+<p><img src="reference/figures/card-mulholland_drive.png" alt="Mulholland Drive palette card: five colours, a colour-blind-safe subset, sequential and diverging ramps." width="100%"><a href="https://en.wikipedia.org/wiki/Mulholland_Drive_(film)" class="external-link"><strong>Mulholland Drive</strong></a> · <code>"mulholland_drive"</code></p>
+<p><img src="reference/figures/card-twin_peaks.png" alt="Twin Peaks palette card: five colours, a colour-blind-safe subset, sequential and diverging ramps." width="100%"><a href="https://en.wikipedia.org/wiki/Twin_Peaks" class="external-link"><strong>Twin Peaks</strong></a> · <code>"twin_peaks"</code></p>
+<p><img src="reference/figures/card-wild_at_heart.png" alt="Wild at Heart palette card: five colours, a colour-blind-safe subset, sequential and diverging ramps." width="100%"><a href="https://en.wikipedia.org/wiki/Wild_at_Heart_(film)" class="external-link"><strong>Wild at Heart</strong></a> · <code>"wild_at_heart"</code></p>
 </div>
 <div class="section level2">
-<h2 id="sequential-and-diverging-ramps">Sequential and diverging ramps<a class="anchor" aria-label="anchor" href="#sequential-and-diverging-ramps"></a>
+<h2 id="colour-blindness">Colour blindness<a class="anchor" aria-label="anchor" href="#colour-blindness"></a>
 </h2>
-<p>For ordered values, use a sequential ramp; for values either side of a midpoint, a diverging one. Both interpolate to any number of colours:</p>
+<p>Only Lost Highway keeps all five colours apart for people with red-green colour blindness. The other films have a <code>_safe</code> version that keeps the three or four colours that do, shown as dots on each card. <code>lynch_accessibility</code> has the numbers.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/lynch_palette.html">lynch_palette</a></span><span class="op">(</span><span class="st">"dune"</span>, <span class="fl">12</span>, type <span class="op">=</span> <span class="st">"sequential"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="reference/lynch_palette.html">lynch_palette</a></span><span class="op">(</span><span class="st">"mulholland_drive"</span>, type <span class="op">=</span> <span class="st">"diverging"</span><span class="op">)</span></span></code></pre></div>
-<div class="float">
-<img src="reference/figures/sequential.png" alt="Sequential ramps, one per film, each running from a light tint to a dark shade of one hue."><div class="figcaption">Sequential ramps, one per film, each running from a light tint to a dark shade of one hue.</div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/lynch_palette.html">lynch_palette</a></span><span class="op">(</span><span class="st">"twin_peaks_safe"</span><span class="op">)</span></span>
+<span><span class="va">lynch_accessibility</span></span></code></pre></div>
 </div>
-<div class="float">
-<img src="reference/figures/diverging.png" alt="Diverging ramps for four films, each running from one of the film’s colours through light grey to another."><div class="figcaption">Diverging ramps for four films, each running from one of the film’s colours through light grey to another.</div>
+<div class="section level2">
+<h2 id="more">More<a class="anchor" aria-label="anchor" href="#more"></a>
+</h2>
+<p>The <a href="vignettes/Lynch.Rmd">Get started vignette</a> walks through every palette type and scale. The figures on this page are built by <code>data-raw/readme-figures.R</code>.</p>
+<p><em>“Black as midnight on a moonless night.”</em></p>
 </div>
 </div>
-</div>
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <div class="links">
+  </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
 <li><a href="https://github.com/gkaramanis/Lynch/" class="external-link">Browse source code</a></li>
@@ -177,25 +157,27 @@
 </ul>
 </div>
 
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/gkaramanis/Lynch/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/gkaramanis/Lynch/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+</ul>
+</div>
 
-
-  </div>
+  </aside>
 </div>
 
 
-      <footer><div class="copyright">
-  <p></p>
-<p>Developed by Georgios Karamanis.</p>
+    <footer><div class="pkgdown-footer-left">
+  <p>Developed by Georgios Karamanis.</p>
 </div>
 
-<div class="pkgdown">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
+<div class="pkgdown-footer-right">
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
-      </footer>
+    </footer>
 </div>
-
 
 
 

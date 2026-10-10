@@ -1,3 +1,10 @@
+# Lynch (development version)
+
+* `print()` on a palette has a cleaner look, with gaps between swatches and hex codes underneath, and returns the palette invisibly.
+* `scale_colour_lynch_c()` and `scale_fill_lynch_c()` take a `guide` argument. Passing `guide` used to fail with "matched by multiple actual arguments".
+* New vignette, `vignette("Lynch")`, and a package help page, `?Lynch`.
+* More examples in the help pages.
+
 # Lynch 0.4.0
 
 * New ggplot2 scales: `scale_colour_lynch_d()` and `scale_fill_lynch_d()` for categories, `scale_colour_lynch_c()` and `scale_fill_lynch_c()` for numbers, with sequential or diverging ramps and an optional `midpoint`. `scale_color_*` aliases included.

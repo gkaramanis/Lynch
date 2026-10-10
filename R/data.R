@@ -16,6 +16,11 @@
 #'   \item{rating}{The result in words. "Safe with direct labels" means 6 to 8
 #'     apart with colour blindness, usable only if the colours are labelled.}
 #' }
+#' @source Computed by `data-raw/lynch_accessibility.R` in the package's
+#'   source repository.
 #' @examples
+#' lynch_accessibility
+#'
+#' # Palettes that pass the colour-blindness test
 #' lynch_accessibility[lynch_accessibility$colourblind_safe, "palette"]
 "lynch_accessibility"

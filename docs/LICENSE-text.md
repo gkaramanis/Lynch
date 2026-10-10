@@ -1,0 +1,4 @@
+# License
+
+YEAR: 2019-2020\
+COPYRIGHT HOLDER: Georgios Karamanis\

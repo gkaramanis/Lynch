@@ -11,10 +11,11 @@ export(scale_colour_lynch_c)
 export(scale_colour_lynch_d)
 export(scale_fill_lynch_c)
 export(scale_fill_lynch_d)
-importFrom(grDevices,rgb)
 importFrom(graphics,
-  image,
   par,
+  plot.new,
+  plot.window,
   rect,
+  strwidth,
   text
 )

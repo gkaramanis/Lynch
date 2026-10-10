@@ -1,13 +1,16 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
-<url><loc>/404.html</loc></url>
-<url><loc>/LICENSE-text.html</loc></url>
-<url><loc>/authors.html</loc></url>
-<url><loc>/index.html</loc></url>
-<url><loc>/news/index.html</loc></url>
-<url><loc>/reference/index.html</loc></url>
-<url><loc>/reference/lynch_accessibility.html</loc></url>
-<url><loc>/reference/lynch_palette.html</loc></url>
-<url><loc>/reference/lynch_palettes.html</loc></url>
-<url><loc>/reference/scale_colour_lynch_d.html</loc></url>
+<url><loc>https://gkaramanis.github.io/Lynch/404.html</loc></url>
+<url><loc>https://gkaramanis.github.io/Lynch/LICENSE-text.html</loc></url>
+<url><loc>https://gkaramanis.github.io/Lynch/articles/Lynch.html</loc></url>
+<url><loc>https://gkaramanis.github.io/Lynch/articles/index.html</loc></url>
+<url><loc>https://gkaramanis.github.io/Lynch/authors.html</loc></url>
+<url><loc>https://gkaramanis.github.io/Lynch/index.html</loc></url>
+<url><loc>https://gkaramanis.github.io/Lynch/news/index.html</loc></url>
+<url><loc>https://gkaramanis.github.io/Lynch/reference/Lynch-package.html</loc></url>
+<url><loc>https://gkaramanis.github.io/Lynch/reference/index.html</loc></url>
+<url><loc>https://gkaramanis.github.io/Lynch/reference/lynch_accessibility.html</loc></url>
+<url><loc>https://gkaramanis.github.io/Lynch/reference/lynch_palette.html</loc></url>
+<url><loc>https://gkaramanis.github.io/Lynch/reference/lynch_palettes.html</loc></url>
+<url><loc>https://gkaramanis.github.io/Lynch/reference/scale_colour_lynch_d.html</loc></url>
 </urlset>
 

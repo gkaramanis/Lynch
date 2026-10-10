@@ -18,6 +18,7 @@ scale_colour_lynch_c(
   type = c("sequential", "diverging"),
   direction = 1,
   midpoint = NULL,
+  guide = "colourbar",
   ...
 )
 
@@ -26,6 +27,7 @@ scale_fill_lynch_c(
   type = c("sequential", "diverging"),
   direction = 1,
   midpoint = NULL,
+  guide = "colourbar",
   ...
 )
 
@@ -36,34 +38,38 @@ scale_color_lynch_c(
   type = c("sequential", "diverging"),
   direction = 1,
   midpoint = NULL,
+  guide = "colourbar",
   ...
 )
 }
 \arguments{
 \item{palette}{Name of the palette. For the discrete scales, any name in
-`names(lynch_palettes)`; the `_safe` palettes stay distinct with red-green
+\code{names(lynch_palettes)}; the \verb{_safe} palettes stay distinct with red-green
 colour blindness. For the continuous scales, a name in
-`names(lynch_sequential)` or `names(lynch_diverging)`, depending on `type`.}
+\code{names(lynch_sequential)} or \code{names(lynch_diverging)}, depending on \code{type}.}
 
-\item{direction}{`1` for the palette's order, `-1` to reverse it.}
+\item{direction}{\code{1} for the palette's order, \code{-1} to reverse it.}
 
-\item{...}{Other arguments passed to [ggplot2::discrete_scale()] or
-[ggplot2::continuous_scale()], such as `name`, `labels` or `na.value`.}
+\item{...}{Other arguments passed to \code{\link[ggplot2:discrete_scale]{ggplot2::discrete_scale()}} or
+\code{\link[ggplot2:continuous_scale]{ggplot2::continuous_scale()}}, such as \code{name}, \code{labels} or \code{na.value}.}
 
-\item{type}{`"sequential"` for ordered values, `"diverging"` for values
+\item{type}{\code{"sequential"} for ordered values, \code{"diverging"} for values
 either side of a midpoint.}
 
 \item{midpoint}{For continuous scales, the data value to put at the centre
-of the ramp, such as `0` for a diverging scale. `NULL` spans the data
+of the ramp, such as \code{0} for a diverging scale. \code{NULL} spans the data
 range.}
+
+\item{guide}{For continuous scales, the legend: \code{"colourbar"} (the
+default), \code{"legend"} or \code{"none"}.}
 }
 \value{
 A ggplot2 scale.
 }
 \description{
-Colour and fill scales using the Lynch palettes. The `_d` scales are for
-categories and use a discrete palette from [lynch_palettes]; the `_c` scales
-are for numbers and use a ramp from [lynch_sequential] or [lynch_diverging].
+Colour and fill scales using the Lynch palettes. The \verb{_d} scales are for
+categories and use a discrete palette from \link{lynch_palettes}; the \verb{_c} scales
+are for numbers and use a ramp from \link{lynch_sequential} or \link{lynch_diverging}.
 }
 \examples{
 library(ggplot2)

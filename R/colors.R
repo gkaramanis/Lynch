@@ -9,7 +9,17 @@
 #'
 #' Use [lynch_palette()] to pick colours from any of them.
 #'
+#' @format Named lists of character vectors of hex colours.
 #' @export
+#' @examples
+#' names(lynch_palettes)
+#' lynch_palettes$twin_peaks
+#'
+#' names(lynch_sequential)
+#' names(lynch_diverging)
+#'
+#' # Use the colours directly in base graphics
+#' barplot(1:5, col = lynch_palettes$wild_at_heart)
 lynch_palettes <- list(
   blue_velvet = c("#2220BD", "#CF3C3D", "#523235", "#C1C6E7", "#333055"),
   dune = c("#1A1454", "#CAAE51", "#8C7573", "#928FA1", "#840F38"),
@@ -58,7 +68,9 @@ lynch_diverging <- list(
 #'   \href{https://www.pinterest.se/pin/151152131226891232/}{this Pin on Pinterest}.
 #' @param type `"discrete"` for categories, `"sequential"` for ordered values,
 #'   `"diverging"` for values either side of a midpoint.
-#' @return A vector of colours.
+#' @return A character vector of hex colours with class `palette`. Printing
+#'   it draws the colours as swatches; use [unclass()] for a plain vector.
+#' @seealso [scale_colour_lynch_d()] and [scale_colour_lynch_c()] for ggplot2.
 #' @export
 #' @keywords colors
 #' @examples
@@ -67,6 +79,10 @@ lynch_diverging <- list(
 #' lynch_palette("twin_peaks_safe")
 #' lynch_palette("dune", 12, type = "sequential")
 #' lynch_palette("mulholland_drive", type = "diverging")
+#'
+#' # Plain colours for base graphics
+#' cols <- unclass(lynch_palette("lost_highway"))
+#' pie(rep(1, 5), col = cols)
 
 lynch_palette <- function(name, n, type = c("discrete", "sequential", "diverging")) {
   type <- match.arg(type)
@@ -103,16 +119,26 @@ lynch_palette <- function(name, n, type = c("discrete", "sequential", "diverging
 }
 
 #' @export
-#' @importFrom graphics rect par image text
-#' @importFrom grDevices rgb
+#' @importFrom graphics par plot.new plot.window rect strwidth text
 print.palette <- function(x, ...) {
   n <- length(x)
-  old <- par(mar = c(0.5, 0.5, 0.5, 0.5))
+  old <- par(mar = c(0.2, 0.2, 0.2, 0.2))
   on.exit(par(old))
 
-  image(1:n, 1, as.matrix(1:n), col = x,
-        ylab = "", xaxt = "n", yaxt = "n", bty = "n")
+  plot.new()
+  plot.window(xlim = c(0, n), ylim = c(-0.4, 1.35), xaxs = "i", yaxs = "i")
 
-  rect(0, 0.9, n + 1, 1.1, col = rgb(1, 1, 1, 0.8), border = NA)
-  text((n + 1) / 2, 1, labels = attr(x, "name"), cex = 1, col = "#32373D")
+  # Gaps while swatches are wide; hex codes only while they fit underneath.
+  gap <- if (n <= 24) 0.06 else 0
+  hex <- toupper(x)
+  labelled <- max(strwidth(hex, cex = 0.75, family = "mono")) < 1 - 2 * gap
+
+  rect(seq_len(n) - 1 + gap / 2, 0, seq_len(n) - gap / 2, 1, col = x, border = NA)
+  if (!is.null(attr(x, "name"))) {
+    text(gap / 2, 1.18, labels = attr(x, "name"), adj = c(0, 0.5), font = 2, col = "#1D1B1F")
+  }
+  if (labelled) {
+    text(seq_len(n) - 0.5, -0.2, labels = hex, cex = 0.75, col = "#77727A", family = "mono")
+  }
+  invisible(x)
 }

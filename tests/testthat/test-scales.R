@@ -33,3 +33,8 @@ test_that("scales work in a plot", {
     scale_colour_lynch_c("twin_peaks")
   expect_no_error(ggplot2::ggplot_build(p))
 })
+
+test_that("continuous scales accept a guide", {
+  expect_equal(scale_fill_lynch_c("dune", guide = "none")$guide, "none")
+  expect_equal(scale_colour_lynch_c("dune")$guide, "colourbar")
+})

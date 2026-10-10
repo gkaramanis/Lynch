@@ -1,0 +1,133 @@
+---
+title: "Get started with Lynch"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Get started with Lynch}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 6,
+  fig.height = 3.5,
+  dpi = 96
+)
+```
+
+```{r setup}
+library(Lynch)
+library(ggplot2)
+```
+
+Lynch has three kinds of palette. Pick the kind that matches your data:
+
+| Kind | For | Where |
+|---|---|---|
+| Discrete | categories | `lynch_palettes` |
+| Sequential | ordered values, low to high | `lynch_sequential` |
+| Diverging | values either side of a midpoint | `lynch_diverging` |
+
+## Picking colours
+
+`lynch_palette()` returns a palette by name. Printing it draws the colours.
+
+```{r, fig.height = 1.2}
+lynch_palette("twin_peaks")
+```
+
+Ask for fewer colours with `n`. Discrete palettes have five colours, so `n` can be at most five.
+
+```{r, fig.height = 1.2}
+lynch_palette("blue_velvet", 3)
+```
+
+Sequential and diverging ramps are interpolated, so they give any number of colours.
+
+```{r, fig.height = 1.2}
+lynch_palette("dune", 12, type = "sequential")
+lynch_palette("mulholland_drive", type = "diverging")
+```
+
+The result keeps a `palette` class for printing. Use `unclass()` when you want a plain character vector.
+
+```{r}
+unclass(lynch_palette("wild_at_heart"))
+```
+
+## Discrete palettes
+
+There are six film palettes and five colour-blind-safe versions.
+
+```{r}
+names(lynch_palettes)
+```
+
+Use `scale_colour_lynch_d()` or `scale_fill_lynch_d()` for categories.
+
+```{r}
+ggplot(mpg, aes(class, fill = drv)) +
+  geom_bar() +
+  scale_fill_lynch_d("lost_highway") +
+  theme_minimal()
+```
+
+Reverse the order with `direction = -1`. If the data has more categories than the palette has colours, the extra levels are drawn as `NA` and you get a warning.
+
+## Colour blindness
+
+Of the film palettes, only `lost_highway` keeps every colour distinct with red-green colour blindness. Each `_safe` palette keeps the three or four colours of its film's palette that do. `lynch_accessibility` has the test results.
+
+```{r}
+lynch_accessibility[, c("palette", "n_colours", "deutan", "protan", "rating")]
+```
+
+Use a `_safe` palette when you have four groups or fewer.
+
+```{r}
+ggplot(mtcars, aes(wt, mpg, colour = factor(cyl))) +
+  geom_point(size = 3) +
+  scale_colour_lynch_d("twin_peaks_safe", name = "Cylinders") +
+  theme_minimal()
+```
+
+## Sequential and diverging scales
+
+`scale_colour_lynch_c()` and `scale_fill_lynch_c()` map numbers to a ramp. The default is sequential.
+
+```{r}
+ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_raster() +
+  scale_fill_lynch_c("dune") +
+  theme_minimal()
+```
+
+For values either side of a reference point, use `type = "diverging"` and set `midpoint`. Without a midpoint, the grey centre sits halfway across the data range.
+
+```{r}
+df <- data.frame(
+  year = 2001:2020,
+  change = c(-4, -3, -3, -1, 0, 1, -2, 2, 3, 1, 4, 5, 3, 6, 8, 7, 9, 12, 10, 14)
+)
+
+ggplot(df, aes(year, change, fill = change)) +
+  geom_col() +
+  scale_fill_lynch_c("mulholland_drive", type = "diverging", midpoint = 0) +
+  theme_minimal()
+```
+
+Only four films have diverging ramps:
+
+```{r}
+names(lynch_diverging)
+```
+
+## Base graphics
+
+The palettes are plain colour vectors, so they work anywhere R takes colours.
+
+```{r}
+image(volcano, col = lynch_palette("mulholland_drive", 50, type = "sequential"), axes = FALSE)
+```

@@ -20,7 +20,7 @@ lynch_pal_d <- function(palette, direction) {
 
 # Continuous scale over a sequential or diverging ramp. A midpoint centres the
 # ramp on that value; otherwise the ramp spans the data range.
-lynch_scale_c <- function(aesthetics, palette, type, direction, midpoint, ...) {
+lynch_scale_c <- function(aesthetics, palette, type, direction, midpoint, guide, ...) {
   type <- match.arg(type, c("sequential", "diverging"))
   cols <- unclass(lynch_palette(palette, type = type))
   if (direction < 0) cols <- rev(cols)
@@ -37,7 +37,7 @@ lynch_scale_c <- function(aesthetics, palette, type, direction, midpoint, ...) {
     aesthetics,
     palette = scales::gradient_n_pal(cols),
     rescaler = rescaler,
-    guide = "colourbar",
+    guide = guide,
     ...
   )
 }
@@ -58,6 +58,8 @@ lynch_scale_c <- function(aesthetics, palette, type, direction, midpoint, ...) {
 #' @param midpoint For continuous scales, the data value to put at the centre
 #'   of the ramp, such as `0` for a diverging scale. `NULL` spans the data
 #'   range.
+#' @param guide For continuous scales, the legend: `"colourbar"` (the
+#'   default), `"legend"` or `"none"`.
 #' @param ... Other arguments passed to [ggplot2::discrete_scale()] or
 #'   [ggplot2::continuous_scale()], such as `name`, `labels` or `na.value`.
 #' @return A ggplot2 scale.
@@ -90,15 +92,15 @@ scale_fill_lynch_d <- function(palette = "lost_highway", direction = 1, ...) {
 #' @rdname scale_colour_lynch_d
 #' @export
 scale_colour_lynch_c <- function(palette = "dune", type = c("sequential", "diverging"),
-                                 direction = 1, midpoint = NULL, ...) {
-  lynch_scale_c("colour", palette, type, direction, midpoint, ...)
+                                 direction = 1, midpoint = NULL, guide = "colourbar", ...) {
+  lynch_scale_c("colour", palette, type, direction, midpoint, guide, ...)
 }
 
 #' @rdname scale_colour_lynch_d
 #' @export
 scale_fill_lynch_c <- function(palette = "dune", type = c("sequential", "diverging"),
-                               direction = 1, midpoint = NULL, ...) {
-  lynch_scale_c("fill", palette, type, direction, midpoint, ...)
+                               direction = 1, midpoint = NULL, guide = "colourbar", ...) {
+  lynch_scale_c("fill", palette, type, direction, midpoint, guide, ...)
 }
 
 #' @rdname scale_colour_lynch_d

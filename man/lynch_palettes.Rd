@@ -5,6 +5,9 @@
 \alias{lynch_sequential}
 \alias{lynch_diverging}
 \title{Complete list of palettes}
+\format{
+Named lists of character vectors of hex colours.
+}
 \usage{
 lynch_palettes
 
@@ -13,13 +16,23 @@ lynch_sequential
 lynch_diverging
 }
 \description{
-`lynch_palettes` holds the discrete palettes, five colours each. The
-`*_safe` palettes keep the three or four colours of a film's palette that
-stay distinct with red-green colour blindness; `lost_highway` already does.
-`lynch_sequential` holds seven-step light-to-dark ramps in one hue per film,
-and `lynch_diverging` nine-step ramps between two of a film's colours
-through neutral grey. See [lynch_accessibility] for the test results.
+\code{lynch_palettes} holds the discrete palettes, five colours each. The
+\verb{*_safe} palettes keep the three or four colours of a film's palette that
+stay distinct with red-green colour blindness; \code{lost_highway} already does.
+\code{lynch_sequential} holds seven-step light-to-dark ramps in one hue per film,
+and \code{lynch_diverging} nine-step ramps between two of a film's colours
+through neutral grey. See \link{lynch_accessibility} for the test results.
 }
 \details{
-Use [lynch_palette()] to pick colours from any of them.
+Use \code{\link[=lynch_palette]{lynch_palette()}} to pick colours from any of them.
+}
+\examples{
+names(lynch_palettes)
+lynch_palettes$twin_peaks
+
+names(lynch_sequential)
+names(lynch_diverging)
+
+# Use the colours directly in base graphics
+barplot(1:5, col = lynch_palettes$wild_at_heart)
 }
