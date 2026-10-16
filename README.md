@@ -4,8 +4,6 @@
 [![R-CMD-check](https://github.com/gkaramanis/Lynch/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gkaramanis/Lynch/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-<img src="man/figures/banner.png" alt="The Red Room from Twin Peaks: a red curtain over a black-and-white zigzag floor, with the word Lynch." width="100%" />
-
 Colour palettes from the films of David Lynch, for when a bar chart needs a little dread.
 
 Every film gets five colours. Most also get a colour-blind-safe cut, a sequential ramp for numbers, and sometimes a diverging one. It's a fun package first, but the scales plug straight into ggplot2, and every palette has been through a colour-blindness simulator.
@@ -68,23 +66,29 @@ ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 
 Most palettes were sampled from stills collected in [this Pinterest pin](https://www.pinterest.se/pin/151152131226891232/). Each film's title below links to its Wikipedia article, where you can hold the poster up against the colours.
 
-<img src="man/figures/card-blue_velvet.png" alt="Blue Velvet palette card: five colours, a colour-blind-safe subset, sequential and diverging ramps." width="100%" />
 [**Blue Velvet**](https://en.wikipedia.org/wiki/Blue_Velvet_(film)) · `"blue_velvet"`
 
-<img src="man/figures/card-dune.png" alt="Dune palette card: five colours, a colour-blind-safe subset and a sequential ramp." width="100%" />
+<img src="man/figures/card-blue_velvet.png" alt="Blue Velvet palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in grease pencil, sequential and diverging ramps." width="100%" />
+
 [**Dune**](https://en.wikipedia.org/wiki/Dune_(1984_film)) · `"dune"`
 
-<img src="man/figures/card-lost_highway.png" alt="Lost Highway palette card: five colours, colour-blind safe as they are, and a sequential ramp." width="100%" />
+<img src="man/figures/card-dune.png" alt="Dune palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in grease pencil and a sequential ramp." width="100%" />
+
 [**Lost Highway**](https://en.wikipedia.org/wiki/Lost_Highway_(film)) · `"lost_highway"`
 
-<img src="man/figures/card-mulholland_drive.png" alt="Mulholland Drive palette card: five colours, a colour-blind-safe subset, sequential and diverging ramps." width="100%" />
+<img src="man/figures/card-lost_highway.png" alt="Lost Highway palette as a strip of film: five colour frames, all colour-blind safe, and a sequential ramp." width="100%" />
+
 [**Mulholland Drive**](https://en.wikipedia.org/wiki/Mulholland_Drive_(film)) · `"mulholland_drive"`
 
-<img src="man/figures/card-twin_peaks.png" alt="Twin Peaks palette card: five colours, a colour-blind-safe subset, sequential and diverging ramps." width="100%" />
+<img src="man/figures/card-mulholland_drive.png" alt="Mulholland Drive palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in grease pencil, sequential and diverging ramps." width="100%" />
+
 [**Twin Peaks**](https://en.wikipedia.org/wiki/Twin_Peaks) · `"twin_peaks"`
 
-<img src="man/figures/card-wild_at_heart.png" alt="Wild at Heart palette card: five colours, a colour-blind-safe subset, sequential and diverging ramps." width="100%" />
+<img src="man/figures/card-twin_peaks.png" alt="Twin Peaks palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in grease pencil, sequential and diverging ramps." width="100%" />
+
 [**Wild at Heart**](https://en.wikipedia.org/wiki/Wild_at_Heart_(film)) · `"wild_at_heart"`
+
+<img src="man/figures/card-wild_at_heart.png" alt="Wild at Heart palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in grease pencil, sequential and diverging ramps." width="100%" />
 
 ## Colour blindness
 
