@@ -68,12 +68,12 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 
 ### [Blue Velvet](https://en.wikipedia.org/wiki/Blue_Velvet_(film)) (1986)
 
-`"blue_velvet"` · Boxed frames are colour-blind safe: `"blue_velvet_safe"`.
+`"blue_velvet"` · Frames with a dot are colour-blind safe: `"blue_velvet_safe"`.
 
 <table>
 <tr>
 <td width="18%"><a href="https://en.wikipedia.org/wiki/Blue_Velvet_(film)"><img src="https://upload.wikimedia.org/wikipedia/en/f/fd/Blue_Velvet_%281986%29.png" alt="Blue Velvet poster" width="100%" /></a></td>
-<td><img src="man/figures/card-blue_velvet.png" alt="Blue Velvet palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in red marker, sequential and diverging ramps." width="100%" /></td>
+<td><img src="man/figures/card-blue_velvet.png" alt="Blue Velvet palette as a strip of film: five colour frames, the colour-blind-safe ones marked with a dot, sequential and diverging ramps." width="100%" /></td>
 </tr>
 </table>
 
@@ -81,12 +81,12 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 
 ### [Dune](https://en.wikipedia.org/wiki/Dune_(1984_film)) (1984)
 
-`"dune"` · Boxed frames are colour-blind safe: `"dune_safe"`.
+`"dune"` · Frames with a dot are colour-blind safe: `"dune_safe"`.
 
 <table>
 <tr>
 <td width="18%"><a href="https://en.wikipedia.org/wiki/Dune_(1984_film)"><img src="https://upload.wikimedia.org/wikipedia/en/5/51/Dune_1984_Poster.jpg" alt="Dune (1984) poster" width="100%" /></a></td>
-<td><img src="man/figures/card-dune.png" alt="Dune palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in red marker and a sequential ramp." width="100%" /></td>
+<td><img src="man/figures/card-dune.png" alt="Dune palette as a strip of film: five colour frames, the colour-blind-safe ones marked with a dot and a sequential ramp." width="100%" /></td>
 </tr>
 </table>
 
@@ -107,12 +107,12 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 
 ### [Mulholland Drive](https://en.wikipedia.org/wiki/Mulholland_Drive_(film)) (2001)
 
-`"mulholland_drive"` · Boxed frames are colour-blind safe: `"mulholland_drive_safe"`.
+`"mulholland_drive"` · Frames with a dot are colour-blind safe: `"mulholland_drive_safe"`.
 
 <table>
 <tr>
 <td width="18%"><a href="https://en.wikipedia.org/wiki/Mulholland_Drive_(film)"><img src="https://upload.wikimedia.org/wikipedia/en/0/0f/Mulholland.png" alt="Mulholland Drive poster" width="100%" /></a></td>
-<td><img src="man/figures/card-mulholland_drive.png" alt="Mulholland Drive palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in red marker, sequential and diverging ramps." width="100%" /></td>
+<td><img src="man/figures/card-mulholland_drive.png" alt="Mulholland Drive palette as a strip of film: five colour frames, the colour-blind-safe ones marked with a dot, sequential and diverging ramps." width="100%" /></td>
 </tr>
 </table>
 
@@ -120,12 +120,12 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 
 ### [Twin Peaks](https://en.wikipedia.org/wiki/Twin_Peaks) (1990–91)
 
-`"twin_peaks"` · Boxed frames are colour-blind safe: `"twin_peaks_safe"`. The poster is for *Fire Walk with Me* (1992), the film.
+`"twin_peaks"` · Frames with a dot are colour-blind safe: `"twin_peaks_safe"`. The poster is for *Fire Walk with Me* (1992), the film.
 
 <table>
 <tr>
 <td width="18%"><a href="https://en.wikipedia.org/wiki/Twin_Peaks"><img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Twin_Peaks_-_Fire_Walk_with_Me.png" alt="Twin Peaks: Fire Walk with Me poster" width="100%" /></a></td>
-<td><img src="man/figures/card-twin_peaks.png" alt="Twin Peaks palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in red marker, sequential and diverging ramps." width="100%" /></td>
+<td><img src="man/figures/card-twin_peaks.png" alt="Twin Peaks palette as a strip of film: five colour frames, the colour-blind-safe ones marked with a dot, sequential and diverging ramps." width="100%" /></td>
 </tr>
 </table>
 
@@ -133,12 +133,12 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 
 ### [Wild at Heart](https://en.wikipedia.org/wiki/Wild_at_Heart_(film)) (1990)
 
-`"wild_at_heart"` · Boxed frames are colour-blind safe: `"wild_at_heart_safe"`.
+`"wild_at_heart"` · Frames with a dot are colour-blind safe: `"wild_at_heart_safe"`.
 
 <table>
 <tr>
 <td width="18%"><a href="https://en.wikipedia.org/wiki/Wild_at_Heart_(film)"><img src="https://upload.wikimedia.org/wikipedia/en/6/60/Wild_at_Heart_film_poster.jpg" alt="Wild at Heart poster" width="100%" /></a></td>
-<td><img src="man/figures/card-wild_at_heart.png" alt="Wild at Heart palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in red marker, sequential and diverging ramps." width="100%" /></td>
+<td><img src="man/figures/card-wild_at_heart.png" alt="Wild at Heart palette as a strip of film: five colour frames, the colour-blind-safe ones marked with a dot, sequential and diverging ramps." width="100%" /></td>
 </tr>
 </table>
 
@@ -146,7 +146,7 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 
 ## Colour blindness
 
-Only Lost Highway keeps all five colours apart for people with red-green colour blindness. The other films have a `_safe` version that keeps the three or four colours that do, boxed in red on each film strip. `lynch_accessibility` has the numbers.
+Only Lost Highway keeps all five colours apart for people with red-green colour blindness. The other films have a `_safe` version that keeps the three or four colours that do, marked with a dot on each film strip. `lynch_accessibility` has the numbers.
 
 ``` r
 lynch_palette("twin_peaks_safe")
