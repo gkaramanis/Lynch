@@ -17,7 +17,7 @@ navbar:
 
 home:
   title: "Lynch: colour palettes from David Lynch films"
-  description: Colour palettes from David Lynch films, colour-blind safe, with ggplot2 scales.
+  description: Colour palettes from David Lynch films, nearly all colour-blind safe, with ggplot2 scales.
 
 reference:
 - title: Palettes
