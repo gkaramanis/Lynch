@@ -148,8 +148,12 @@ keeps the four colours that do, marked with a dot on its film strip.
 ## More
 
 The [Get started
-vignette](https://gkaramanis.github.io/Lynch/vignettes/Lynch.Rmd) walks
+vignette](https://gkaramanis.github.io/Lynch/articles/Lynch.html) walks
 through every palette type and scale. The figures on this page are built
 by `data-raw/readme-figures.R`.
 
-*“Black as midnight on a moonless night.”*
+*“Black as midnight on a moonless night.”* Agent Cooper, on his coffee,
+in *Twin Peaks*
+
+*“She wore blue velvet. Bluer than velvet was the night.”* The title
+song of *Blue Velvet*

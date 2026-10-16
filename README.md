@@ -1,4 +1,4 @@
-# Lynch
+# Lynch <a href="https://gkaramanis.github.io/Lynch/"><img src="man/figures/logo.png" align="right" height="138" alt="Lynch hex logo: David Lynch's hair and face in near-black on red, with the name along the lower edge." /></a>
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/gkaramanis/Lynch/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gkaramanis/Lynch/actions/workflows/R-CMD-check.yaml)

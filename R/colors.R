@@ -52,7 +52,7 @@ lynch_diverging <- list(
 
 #' A David Lynch palette generator
 #'
-#' ![](sticker.png "Lynch sticker")
+#' ![](logo.png "Lynch logo")
 #' Color palettes from David Lynch films.
 #'
 #' @param name Name of the palette, such as `"twin_peaks"` or

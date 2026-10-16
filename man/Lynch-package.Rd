@@ -24,6 +24,7 @@ Start with \code{vignette("Lynch")}.
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://gkaramanis.github.io/Lynch/}
   \item \url{https://github.com/gkaramanis/Lynch}
   \item Report bugs at \url{https://github.com/gkaramanis/Lynch/issues}
 }

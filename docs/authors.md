@@ -10,12 +10,12 @@ Source:
 [`DESCRIPTION`](https://github.com/gkaramanis/Lynch/blob/HEAD/DESCRIPTION)
 
 Karamanis G (2026). *Lynch: A David Lynch Palette Generator*. R package
-version 0.4.0.9000, <https://github.com/gkaramanis/Lynch>.
+version 0.4.0.9000, <https://gkaramanis.github.io/Lynch/>.
 
 @Manual{,\
   title = {Lynch: A David Lynch Palette Generator},\
   author = {Georgios Karamanis},\
   year = {2026},\
   note = {R package version 0.4.0.9000},\
-  url = {https://github.com/gkaramanis/Lynch},\
+  url = {https://gkaramanis.github.io/Lynch/},\
 }

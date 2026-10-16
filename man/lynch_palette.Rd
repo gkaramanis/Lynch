@@ -24,7 +24,7 @@ A character vector of hex colours with class \code{palette}. Printing
 it draws the colours as swatches; use \code{\link[=unclass]{unclass()}} for a plain vector.
 }
 \description{
-\figure{sticker.png}{Lynch sticker}
+\figure{logo.png}{Lynch logo}
 Color palettes from David Lynch films.
 }
 \examples{

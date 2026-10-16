@@ -1,7 +1,6 @@
 # A David Lynch palette generator
 
-![Lynch sticker](figures/sticker.png) Color palettes from David Lynch
-films.
+Color palettes from David Lynch films.
 
 ## Usage
 
