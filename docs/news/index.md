@@ -2,6 +2,13 @@
 
 ## Lynch (development version)
 
+- Four palettes are now colour-blind safe as they are, after small
+  changes to one or two colours each: `dune` (`#8C7573` to `#826054`),
+  `mulholland_drive` (`#907978` to `#997B66`), `twin_peaks` (`#47A54E`
+  to `#009667`) and `wild_at_heart` (`#73364F` to `#771637`, `#9F8A5A`
+  to `#A5905F`, and its diverging ramp to match). Their `_safe` versions
+  are deprecated and now return the full palette with a warning.
+  `blue_velvet_safe` stays.
 - [`print()`](https://rdrr.io/r/base/print.html) on a palette has a
   cleaner look, with gaps between swatches and hex codes underneath, and
   returns the palette invisibly.

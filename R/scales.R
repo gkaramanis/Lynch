@@ -1,10 +1,7 @@
 # Palette function for discrete scales. Levels beyond the palette's colours get
 # NA, which ggplot2 draws in its na.value colour.
 lynch_pal_d <- function(palette, direction) {
-  cols <- lynch_palettes[[palette]]
-  if (is.null(cols)) {
-    stop("Palette not found.", call. = FALSE)
-  }
+  cols <- unclass(lynch_palette(palette))
   if (direction < 0) cols <- rev(cols)
   function(n) {
     if (n > length(cols)) {
@@ -49,8 +46,8 @@ lynch_scale_c <- function(aesthetics, palette, type, direction, midpoint, guide,
 #' are for numbers and use a ramp from [lynch_sequential] or [lynch_diverging].
 #'
 #' @param palette Name of the palette. For the discrete scales, any name in
-#'   `names(lynch_palettes)`; the `_safe` palettes stay distinct with red-green
-#'   colour blindness. For the continuous scales, a name in
+#'   `names(lynch_palettes)`. All but `blue_velvet` stay distinct with
+#'   red-green colour blindness; use `blue_velvet_safe` for that film. For the continuous scales, a name in
 #'   `names(lynch_sequential)` or `names(lynch_diverging)`, depending on `type`.
 #' @param type `"sequential"` for ordered values, `"diverging"` for values
 #'   either side of a midpoint.
@@ -69,7 +66,7 @@ lynch_scale_c <- function(aesthetics, palette, type, direction, midpoint, guide,
 #'
 #' ggplot(mtcars, aes(wt, mpg, colour = factor(cyl))) +
 #'   geom_point(size = 3) +
-#'   scale_colour_lynch_d("twin_peaks_safe")
+#'   scale_colour_lynch_d("twin_peaks")
 #'
 #' ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 #'   geom_raster() +

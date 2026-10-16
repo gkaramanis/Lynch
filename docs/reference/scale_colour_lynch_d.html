@@ -86,8 +86,8 @@ are for numbers and use a ramp from <a href="lynch_palettes.html">lynch_sequenti
 
 <dl><dt id="arg-palette">palette<a class="anchor" aria-label="anchor" href="#arg-palette"></a></dt>
 <dd><p>Name of the palette. For the discrete scales, any name in
-<code>names(lynch_palettes)</code>; the <code>_safe</code> palettes stay distinct with red-green
-colour blindness. For the continuous scales, a name in
+<code>names(lynch_palettes)</code>. All but <code>blue_velvet</code> stay distinct with
+red-green colour blindness; use <code>blue_velvet_safe</code> for that film. For the continuous scales, a name in
 <code>names(lynch_sequential)</code> or <code>names(lynch_diverging)</code>, depending on <code>type</code>.</p></dd>
 
 
@@ -127,7 +127,7 @@ default), <code>"legend"</code> or <code>"none"</code>.</p></dd>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">wt</span>, <span class="va">mpg</span>, colour <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span></span>
-<span class="r-in"><span>  <span class="fu">scale_colour_lynch_d</span><span class="op">(</span><span class="st">"twin_peaks_safe"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">scale_colour_lynch_d</span><span class="op">(</span><span class="st">"twin_peaks"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="scale_colour_lynch_d-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">faithfuld</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">waiting</span>, <span class="va">eruptions</span>, fill <span class="op">=</span> <span class="va">density</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span></span>

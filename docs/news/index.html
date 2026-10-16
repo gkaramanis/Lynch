@@ -35,7 +35,8 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="development version" id="lynch-development-version">Lynch (development version)<a class="anchor" aria-label="anchor" href="#lynch-development-version"></a></h2>
-<ul><li>
+<ul><li>Four palettes are now colour-blind safe as they are, after small changes to one or two colours each: <code>dune</code> (<code>#8C7573</code> to <code>#826054</code>), <code>mulholland_drive</code> (<code>#907978</code> to <code>#997B66</code>), <code>twin_peaks</code> (<code>#47A54E</code> to <code>#009667</code>) and <code>wild_at_heart</code> (<code>#73364F</code> to <code>#771637</code>, <code>#9F8A5A</code> to <code>#A5905F</code>, and its diverging ramp to match). Their <code>_safe</code> versions are deprecated and now return the full palette with a warning. <code>blue_velvet_safe</code> stays.</li>
+<li>
 <code><a href="https://rdrr.io/r/base/print.html" class="external-link">print()</a></code> on a palette has a cleaner look, with gaps between swatches and hex codes underneath, and returns the palette invisibly.</li>
 <li>
 <code><a href="../reference/scale_colour_lynch_d.html">scale_colour_lynch_c()</a></code> and <code><a href="../reference/scale_colour_lynch_d.html">scale_fill_lynch_c()</a></code> take a <code>guide</code> argument. Passing <code>guide</code> used to fail with “matched by multiple actual arguments”.</li>

@@ -1,8 +1,5 @@
 # Lynch
 
-![The Red Room from Twin Peaks: a red curtain over a black-and-white
-zigzag floor, with the word Lynch.](reference/figures/banner.png)
-
 Colour palettes from the films of David Lynch, for when a bar chart
 needs a little dread.
 
@@ -51,7 +48,7 @@ red.](reference/figures/example-mulholland_drive-diverging.png)
 \
 [`ggplot`](https://ggplot2.tidyverse.org/reference/ggplot.html)`(``mpg``, `[`aes`](https://ggplot2.tidyverse.org/reference/aes.html)`(``displ``, ``hwy``, colour ``=`` ``drv``)``)`` ``+`\
 `  `[`geom_point`](https://ggplot2.tidyverse.org/reference/geom_point.html)`(``)`` ``+`\
-`  `[`scale_colour_lynch_d`](https://gkaramanis.github.io/Lynch/reference/scale_colour_lynch_d.md)`(``"twin_peaks_safe"``)`\
+`  `[`scale_colour_lynch_d`](https://gkaramanis.github.io/Lynch/reference/scale_colour_lynch_d.md)`(``"twin_peaks"``)`\
 \
 [`ggplot`](https://ggplot2.tidyverse.org/reference/ggplot.html)`(``faithfuld``, `[`aes`](https://ggplot2.tidyverse.org/reference/aes.html)`(``waiting``, ``eruptions``, fill ``=`` ``density``)``)`` ``+`\
 `  `[`geom_raster`](https://ggplot2.tidyverse.org/reference/geom_tile.html)`(``)`` ``+`\
@@ -69,53 +66,81 @@ diverging scale, add `type = "diverging"` and a `midpoint`.
 ## The palettes
 
 Most palettes were sampled from stills collected in [this Pinterest
-pin](https://www.pinterest.se/pin/151152131226891232/). Each film’s
-title below links to its Wikipedia article, where you can hold the
-poster up against the colours.
+pin](https://www.pinterest.se/pin/151152131226891232/). Each one sits
+beside the film’s poster from Wikipedia, so you can hold the two up
+against each other.
 
-![Blue Velvet palette card: five colours, a colour-blind-safe subset,
-sequential and diverging
-ramps.](reference/figures/card-blue_velvet.png)[**Blue
-Velvet**](https://en.wikipedia.org/wiki/Blue_Velvet_(film)) ·
-`"blue_velvet"`
+### [Blue Velvet](https://en.wikipedia.org/wiki/Blue_Velvet_(film)) (1986)
 
-![Dune palette card: five colours, a colour-blind-safe subset and a
-sequential
-ramp.](reference/figures/card-dune.png)[**Dune**](https://en.wikipedia.org/wiki/Dune_(1984_film))
-· `"dune"`
+`"blue_velvet"` · Frames with a dot are colour-blind safe:
+`"blue_velvet_safe"`.
 
-![Lost Highway palette card: five colours, colour-blind safe as they
-are, and a sequential
-ramp.](reference/figures/card-lost_highway.png)[**Lost
-Highway**](https://en.wikipedia.org/wiki/Lost_Highway_(film)) ·
-`"lost_highway"`
+|  |  |
+|----|----|
+| [![Blue Velvet poster](https://upload.wikimedia.org/wikipedia/en/f/fd/Blue_Velvet_%281986%29.png)](https://en.wikipedia.org/wiki/Blue_Velvet_(film)) | ![Blue Velvet palette as a strip of film: five colour frames, the colour-blind-safe ones marked with a dot, sequential and diverging ramps.](reference/figures/card-blue_velvet.png) |
 
-![Mulholland Drive palette card: five colours, a colour-blind-safe
-subset, sequential and diverging
-ramps.](reference/figures/card-mulholland_drive.png)[**Mulholland
-Drive**](https://en.wikipedia.org/wiki/Mulholland_Drive_(film)) ·
-`"mulholland_drive"`
+\
 
-![Twin Peaks palette card: five colours, a colour-blind-safe subset,
-sequential and diverging
-ramps.](reference/figures/card-twin_peaks.png)[**Twin
-Peaks**](https://en.wikipedia.org/wiki/Twin_Peaks) · `"twin_peaks"`
+### [Dune](https://en.wikipedia.org/wiki/Dune_(1984_film)) (1984)
 
-![Wild at Heart palette card: five colours, a colour-blind-safe subset,
-sequential and diverging
-ramps.](reference/figures/card-wild_at_heart.png)[**Wild at
-Heart**](https://en.wikipedia.org/wiki/Wild_at_Heart_(film)) ·
-`"wild_at_heart"`
+`"dune"` · All five colours are colour-blind safe.
+
+|  |  |
+|----|----|
+| [![Dune (1984) poster](https://upload.wikimedia.org/wikipedia/en/5/51/Dune_1984_Poster.jpg)](https://en.wikipedia.org/wiki/Dune_(1984_film)) | ![Dune palette as a strip of film: five colour frames, the colour-blind-safe ones marked with a dot and a sequential ramp.](reference/figures/card-dune.png) |
+
+\
+
+### [Lost Highway](https://en.wikipedia.org/wiki/Lost_Highway_(film)) (1997)
+
+`"lost_highway"` · All five colours are colour-blind safe.
+
+|  |  |
+|----|----|
+| [![Lost Highway poster](https://upload.wikimedia.org/wikipedia/en/4/47/Lost_Higway_%281997%29.png)](https://en.wikipedia.org/wiki/Lost_Highway_(film)) | ![Lost Highway palette as a strip of film: five colour frames, all colour-blind safe, and a sequential ramp.](reference/figures/card-lost_highway.png) |
+
+\
+
+### [Mulholland Drive](https://en.wikipedia.org/wiki/Mulholland_Drive_(film)) (2001)
+
+`"mulholland_drive"` · All five colours are colour-blind safe.
+
+|  |  |
+|----|----|
+| [![Mulholland Drive poster](https://upload.wikimedia.org/wikipedia/en/0/0f/Mulholland.png)](https://en.wikipedia.org/wiki/Mulholland_Drive_(film)) | ![Mulholland Drive palette as a strip of film: five colour frames, the colour-blind-safe ones marked with a dot, sequential and diverging ramps.](reference/figures/card-mulholland_drive.png) |
+
+\
+
+### [Twin Peaks](https://en.wikipedia.org/wiki/Twin_Peaks) (1990–91)
+
+`"twin_peaks"` · All five colours are colour-blind safe. The poster is
+for *Fire Walk with Me* (1992), the film.
+
+|  |  |
+|----|----|
+| [![Twin Peaks: Fire Walk with Me poster](https://upload.wikimedia.org/wikipedia/en/3/3d/Twin_Peaks_-_Fire_Walk_with_Me.png)](https://en.wikipedia.org/wiki/Twin_Peaks) | ![Twin Peaks palette as a strip of film: five colour frames, the colour-blind-safe ones marked with a dot, sequential and diverging ramps.](reference/figures/card-twin_peaks.png) |
+
+\
+
+### [Wild at Heart](https://en.wikipedia.org/wiki/Wild_at_Heart_(film)) (1990)
+
+`"wild_at_heart"` · All five colours are colour-blind safe.
+
+|  |  |
+|----|----|
+| [![Wild at Heart poster](https://upload.wikimedia.org/wikipedia/en/6/60/Wild_at_Heart_film_poster.jpg)](https://en.wikipedia.org/wiki/Wild_at_Heart_(film)) | ![Wild at Heart palette as a strip of film: five colour frames, the colour-blind-safe ones marked with a dot, sequential and diverging ramps.](reference/figures/card-wild_at_heart.png) |
+
+\
 
 ## Colour blindness
 
-Only Lost Highway keeps all five colours apart for people with red-green
-colour blindness. The other films have a `_safe` version that keeps the
-three or four colours that do, shown as dots on each card.
+Every palette keeps its five colours apart for people with red-green
+colour blindness, except Blue Velvet. Its `blue_velvet_safe` version
+keeps the four colours that do, marked with a dot on its film strip.
 `lynch_accessibility` has the numbers.
 
 \
-[`lynch_palette`](https://gkaramanis.github.io/Lynch/reference/lynch_palette.md)`(``"twin_peaks_safe"``)`\
+[`lynch_palette`](https://gkaramanis.github.io/Lynch/reference/lynch_palette.md)`(``"blue_velvet_safe"``)`\
 `lynch_accessibility`
 
 ## More

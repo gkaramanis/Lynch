@@ -1,8 +1,8 @@
 #' Complete list of palettes
 #'
-#' `lynch_palettes` holds the discrete palettes, five colours each. The
-#' `*_safe` palettes keep the three or four colours of a film's palette that
-#' stay distinct with red-green colour blindness; `lost_highway` already does.
+#' `lynch_palettes` holds the discrete palettes, five colours each. Every film
+#' palette stays distinct with red-green colour blindness except
+#' `blue_velvet`; `blue_velvet_safe` keeps the four of its colours that do.
 #' `lynch_sequential` holds seven-step light-to-dark ramps in one hue per film,
 #' and `lynch_diverging` nine-step ramps between two of a film's colours
 #' through neutral grey. See [lynch_accessibility] for the test results.
@@ -22,16 +22,12 @@
 #' barplot(1:5, col = lynch_palettes$wild_at_heart)
 lynch_palettes <- list(
   blue_velvet = c("#2220BD", "#CF3C3D", "#523235", "#C1C6E7", "#333055"),
-  dune = c("#1A1454", "#CAAE51", "#8C7573", "#928FA1", "#840F38"),
+  dune = c("#1A1454", "#CAAE51", "#826054", "#928FA1", "#840F38"),
   lost_highway = c("#DAE9E9", "#F2D85D", "#C0A4AE", "#3C2826", "#4F85B8"),
-  mulholland_drive = c("#3D87B5", "#000235", "#907978", "#AC3539", "#545671"),
-  twin_peaks = c("#332F2F", "#E74F4F", "#47A54E", "#74BDB7", "#F9E9E9"),
-  wild_at_heart = c("#CD5C90", "#E5BF5C", "#73364F", "#9F8A5A", "#515767"),
-  blue_velvet_safe = c("#2220BD", "#CF3C3D", "#C1C6E7", "#333055"),
-  dune_safe = c("#1A1454", "#CAAE51", "#8C7573", "#840F38"),
-  mulholland_drive_safe = c("#3D87B5", "#000235", "#AC3539", "#545671"),
-  twin_peaks_safe = c("#332F2F", "#E74F4F", "#74BDB7"),
-  wild_at_heart_safe = c("#CD5C90", "#E5BF5C", "#73364F")
+  mulholland_drive = c("#3D87B5", "#000235", "#997B66", "#AC3539", "#545671"),
+  twin_peaks = c("#332F2F", "#E74F4F", "#009667", "#74BDB7", "#F9E9E9"),
+  wild_at_heart = c("#CD5C90", "#E5BF5C", "#771637", "#A5905F", "#515767"),
+  blue_velvet_safe = c("#2220BD", "#CF3C3D", "#C1C6E7", "#333055")
 )
 
 #' @rdname lynch_palettes
@@ -51,7 +47,7 @@ lynch_diverging <- list(
   blue_velvet = c("#211FBD", "#6C51CA", "#9C83D7", "#C5B7E2", "#ECECEC", "#EDC3BD", "#E89990", "#DD6D65", "#CE3B3D"),
   mulholland_drive = c("#3D86B4", "#719FC3", "#9CB8D1", "#C5D2DF", "#ECECEC", "#E3BFBC", "#D4928D", "#C26561", "#AC3439"),
   twin_peaks = c("#73BDB7", "#94C9C4", "#B2D5D1", "#CFE1DF", "#ECECEC", "#F3C7C3", "#F3A29A", "#EF7B73", "#E64E4E"),
-  wild_at_heart = c("#72354E", "#926173", "#B08E9A", "#CFBCC2", "#ECECEC", "#DAD3C6", "#C7BAA1", "#B3A17D", "#9F8A59")
+  wild_at_heart = c("#771637", "#974F5F", "#B6828B", "#D2B6BA", "#ECECEC", "#DBD4C7", "#C9BCA3", "#B7A680", "#A5905F")
 )
 
 #' A David Lynch palette generator
@@ -60,7 +56,7 @@ lynch_diverging <- list(
 #' Color palettes from David Lynch films.
 #'
 #' @param name Name of the palette, such as `"twin_peaks"` or
-#'   `"twin_peaks_safe"`. See `names(lynch_palettes)`, `names(lynch_sequential)`
+#'   `"blue_velvet_safe"`. See `names(lynch_palettes)`, `names(lynch_sequential)`
 #'   and `names(lynch_diverging)`.
 #' @param n Number of colours. If omitted, uses all colours. Discrete palettes
 #'   offer at most their own colours; sequential and diverging ramps are
@@ -76,7 +72,7 @@ lynch_diverging <- list(
 #' @examples
 #' lynch_palette("twin_peaks")
 #' lynch_palette("blue_velvet", 3)
-#' lynch_palette("twin_peaks_safe")
+#' lynch_palette("blue_velvet_safe")
 #' lynch_palette("dune", 12, type = "sequential")
 #' lynch_palette("mulholland_drive", type = "diverging")
 #'
@@ -91,6 +87,14 @@ lynch_palette <- function(name, n, type = c("discrete", "sequential", "diverging
   if (identical(name, "mullholland_drive")) {
     warning('"mullholland_drive" is deprecated; use "mulholland_drive".', call. = FALSE)
     name <- "mulholland_drive"
+  }
+
+  # These films became colour-blind safe as they are; the old names still work.
+  retired <- c("dune_safe", "mulholland_drive_safe", "twin_peaks_safe", "wild_at_heart_safe")
+  if (name %in% retired) {
+    film <- sub("_safe$", "", name)
+    warning('"', name, '" is deprecated; "', film, '" is colour-blind safe as it is.', call. = FALSE)
+    name <- film
   }
 
   pals <- switch(type,

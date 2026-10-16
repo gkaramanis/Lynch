@@ -44,8 +44,8 @@ scale_color_lynch_c(
 }
 \arguments{
 \item{palette}{Name of the palette. For the discrete scales, any name in
-\code{names(lynch_palettes)}; the \verb{_safe} palettes stay distinct with red-green
-colour blindness. For the continuous scales, a name in
+\code{names(lynch_palettes)}. All but \code{blue_velvet} stay distinct with
+red-green colour blindness; use \code{blue_velvet_safe} for that film. For the continuous scales, a name in
 \code{names(lynch_sequential)} or \code{names(lynch_diverging)}, depending on \code{type}.}
 
 \item{direction}{\code{1} for the palette's order, \code{-1} to reverse it.}
@@ -76,7 +76,7 @@ library(ggplot2)
 
 ggplot(mtcars, aes(wt, mpg, colour = factor(cyl))) +
   geom_point(size = 3) +
-  scale_colour_lynch_d("twin_peaks_safe")
+  scale_colour_lynch_d("twin_peaks")
 
 ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   geom_raster() +

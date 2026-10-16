@@ -8,7 +8,7 @@ lynch_palette(name, n, type = c("discrete", "sequential", "diverging"))
 }
 \arguments{
 \item{name}{Name of the palette, such as \code{"twin_peaks"} or
-\code{"twin_peaks_safe"}. See \code{names(lynch_palettes)}, \code{names(lynch_sequential)}
+\code{"blue_velvet_safe"}. See \code{names(lynch_palettes)}, \code{names(lynch_sequential)}
 and \code{names(lynch_diverging)}.}
 
 \item{n}{Number of colours. If omitted, uses all colours. Discrete palettes
@@ -30,7 +30,7 @@ Color palettes from David Lynch films.
 \examples{
 lynch_palette("twin_peaks")
 lynch_palette("blue_velvet", 3)
-lynch_palette("twin_peaks_safe")
+lynch_palette("blue_velvet_safe")
 lynch_palette("dune", 12, type = "sequential")
 lynch_palette("mulholland_drive", type = "diverging")
 

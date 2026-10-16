@@ -46,7 +46,13 @@ test_that("the old mullholland_drive spelling still works, with a warning", {
 test_that("accessibility table covers every discrete palette", {
   expect_setequal(lynch_accessibility$palette, names(lynch_palettes))
   safe <- lynch_accessibility$palette[lynch_accessibility$colourblind_safe]
-  expect_true(all(grepl("_safe$", setdiff(safe, "lost_highway"))))
+  expect_setequal(safe, setdiff(names(lynch_palettes), "blue_velvet"))
+})
+
+test_that("retired _safe names give the full palette, with a warning", {
+  expect_warning(pal <- lynch_palette("twin_peaks_safe"), "deprecated")
+  expect_equal(unclass(pal), lynch_palettes$twin_peaks, ignore_attr = TRUE)
+  expect_warning(scale_fill_lynch_d("dune_safe"), "deprecated")
 })
 
 test_that("printing a palette draws it and returns invisibly", {

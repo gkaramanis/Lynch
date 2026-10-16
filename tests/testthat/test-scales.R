@@ -1,12 +1,12 @@
 test_that("discrete scales use the palette's colours in order", {
-  sc <- scale_fill_lynch_d("twin_peaks_safe")
+  sc <- scale_fill_lynch_d("blue_velvet_safe")
   expect_s3_class(sc, "ScaleDiscrete")
-  expect_equal(sc$palette(3), lynch_palettes$twin_peaks_safe)
+  expect_equal(sc$palette(4), lynch_palettes$blue_velvet_safe)
   expect_equal(scale_colour_lynch_d("dune", direction = -1)$palette(5), rev(lynch_palettes$dune))
 })
 
 test_that("discrete scales warn when a palette runs out", {
-  expect_warning(scale_fill_lynch_d("twin_peaks_safe")$palette(4), "shown as NA")
+  expect_warning(scale_fill_lynch_d("blue_velvet_safe")$palette(5), "shown as NA")
 })
 
 test_that("unknown palettes error", {

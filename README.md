@@ -48,7 +48,7 @@ library(ggplot2)
 
 ggplot(mpg, aes(displ, hwy, colour = drv)) +
   geom_point() +
-  scale_colour_lynch_d("twin_peaks_safe")
+  scale_colour_lynch_d("twin_peaks")
 
 ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   geom_raster() +
@@ -81,7 +81,7 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 
 ### [Dune](https://en.wikipedia.org/wiki/Dune_(1984_film)) (1984)
 
-`"dune"` · Frames with a dot are colour-blind safe: `"dune_safe"`.
+`"dune"` · All five colours are colour-blind safe.
 
 <table>
 <tr>
@@ -107,7 +107,7 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 
 ### [Mulholland Drive](https://en.wikipedia.org/wiki/Mulholland_Drive_(film)) (2001)
 
-`"mulholland_drive"` · Frames with a dot are colour-blind safe: `"mulholland_drive_safe"`.
+`"mulholland_drive"` · All five colours are colour-blind safe.
 
 <table>
 <tr>
@@ -120,7 +120,7 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 
 ### [Twin Peaks](https://en.wikipedia.org/wiki/Twin_Peaks) (1990–91)
 
-`"twin_peaks"` · Frames with a dot are colour-blind safe: `"twin_peaks_safe"`. The poster is for *Fire Walk with Me* (1992), the film.
+`"twin_peaks"` · All five colours are colour-blind safe. The poster is for *Fire Walk with Me* (1992), the film.
 
 <table>
 <tr>
@@ -133,7 +133,7 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 
 ### [Wild at Heart](https://en.wikipedia.org/wiki/Wild_at_Heart_(film)) (1990)
 
-`"wild_at_heart"` · Frames with a dot are colour-blind safe: `"wild_at_heart_safe"`.
+`"wild_at_heart"` · All five colours are colour-blind safe.
 
 <table>
 <tr>
@@ -146,10 +146,10 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 
 ## Colour blindness
 
-Only Lost Highway keeps all five colours apart for people with red-green colour blindness. The other films have a `_safe` version that keeps the three or four colours that do, marked with a dot on each film strip. `lynch_accessibility` has the numbers.
+Every palette keeps its five colours apart for people with red-green colour blindness, except Blue Velvet. Its `blue_velvet_safe` version keeps the four colours that do, marked with a dot on its film strip. `lynch_accessibility` has the numbers.
 
 ``` r
-lynch_palette("twin_peaks_safe")
+lynch_palette("blue_velvet_safe")
 lynch_accessibility
 ```
 

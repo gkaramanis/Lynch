@@ -83,35 +83,27 @@ source repository.</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">lynch_accessibility</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                  palette n_colours normal deutan protan tritan colourblind_safe</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1            blue_velvet         5    8.2    8.5    6.7    8.4            FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                   dune         5    8.5    8.1    9.2    8.4            FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3           lost_highway         5   15.3   15.1   13.2    9.4             TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4       mulholland_drive         5   12.5   10.1    8.8   14.0            FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5             twin_peaks         5   15.3    1.2   14.2   10.2            FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6          wild_at_heart         5   10.0    4.2    7.8   12.1            FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7       blue_velvet_safe         4   17.9   17.2   18.1   10.7             TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8              dune_safe         4   20.5   17.5   11.2   17.9             TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  mulholland_drive_safe         4   15.4   12.9    8.8   16.5             TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10       twin_peaks_safe         3   28.4   14.5   23.9   35.1             TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11    wild_at_heart_safe         3   21.8   21.3   18.5   21.1             TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        rating</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  close pair for all viewers</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  close pair for all viewers</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3           colour-blind safe</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  close pair for all viewers</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5       not colour-blind safe</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  close pair for all viewers</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7           colour-blind safe</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8           colour-blind safe</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9           colour-blind safe</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10          colour-blind safe</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11          colour-blind safe</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            palette n_colours normal deutan protan tritan colourblind_safe</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1      blue_velvet         5    8.2    8.5    6.7    8.4            FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2             dune         5   15.1   11.2   11.2   12.5             TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     lost_highway         5   15.3   15.1   13.2    9.4             TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 mulholland_drive         5   15.0    9.6    8.8   15.9             TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5       twin_peaks         5   17.0    8.2    8.8   14.1             TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6    wild_at_heart         5   15.8    8.1   10.8   12.4             TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7 blue_velvet_safe         4   17.9   17.2   18.1   10.7             TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                       rating</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 close pair for all viewers</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2          colour-blind safe</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3          colour-blind safe</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4          colour-blind safe</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5          colour-blind safe</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6          colour-blind safe</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7          colour-blind safe</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Palettes that pass the colour-blindness test</span></span></span>
 <span class="r-in"><span><span class="va">lynch_accessibility</span><span class="op">[</span><span class="va">lynch_accessibility</span><span class="op">$</span><span class="va">colourblind_safe</span>, <span class="st">"palette"</span><span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "lost_highway"          "blue_velvet_safe"      "dune_safe"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "mulholland_drive_safe" "twin_peaks_safe"       "wild_at_heart_safe"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "dune"             "lost_highway"     "mulholland_drive" "twin_peaks"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "wild_at_heart"    "blue_velvet_safe"</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

@@ -49,7 +49,7 @@ character vector.
 
 \
 [`unclass`](https://rdrr.io/r/base/class.html)`(`[`lynch_palette`](https://gkaramanis.github.io/Lynch/reference/lynch_palette.md)`(``"wild_at_heart"``)``)`\
-`#> [1] "#CD5C90" "#E5BF5C" "#73364F" "#9F8A5A" "#515767"`\
+`#> [1] "#CD5C90" "#E5BF5C" "#771637" "#A5905F" "#515767"`\
 `#> attr(,"name")`\
 `#> [1] "wild_at_heart"`
 
@@ -59,10 +59,8 @@ There are six film palettes and five colour-blind-safe versions.
 
 \
 [`names`](https://rdrr.io/r/base/names.html)`(``lynch_palettes``)`\
-`#>  [1] "blue_velvet"           "dune"                  "lost_highway"         `\
-`#>  [4] "mulholland_drive"      "twin_peaks"            "wild_at_heart"        `\
-`#>  [7] "blue_velvet_safe"      "dune_safe"             "mulholland_drive_safe"`\
-`#> [10] "twin_peaks_safe"       "wild_at_heart_safe"`
+`#> [1] "blue_velvet"      "dune"             "lost_highway"     "mulholland_drive"`\
+`#> [5] "twin_peaks"       "wild_at_heart"    "blue_velvet_safe"`
 
 Use
 [`scale_colour_lynch_d()`](https://gkaramanis.github.io/Lynch/reference/scale_colour_lynch_d.md)
@@ -84,32 +82,28 @@ get a warning.
 
 ## Colour blindness
 
-Of the film palettes, only `lost_highway` keeps every colour distinct
-with red-green colour blindness. Each `_safe` palette keeps the three or
-four colours of its film’s palette that do. `lynch_accessibility` has
-the test results.
+Every film palette keeps its colours distinct with red-green colour
+blindness except `blue_velvet`. `blue_velvet_safe` keeps the four of its
+colours that do. `lynch_accessibility` has the test results.
 
 \
 `lynch_accessibility``[``, `[`c`](https://rdrr.io/r/base/c.html)`(``"palette"``, ``"n_colours"``, ``"deutan"``, ``"protan"``, ``"rating"``)``]`\
-`#>                  palette n_colours deutan protan                     rating`\
-`#> 1            blue_velvet         5    8.5    6.7 close pair for all viewers`\
-`#> 2                   dune         5    8.1    9.2 close pair for all viewers`\
-`#> 3           lost_highway         5   15.1   13.2          colour-blind safe`\
-`#> 4       mulholland_drive         5   10.1    8.8 close pair for all viewers`\
-`#> 5             twin_peaks         5    1.2   14.2      not colour-blind safe`\
-`#> 6          wild_at_heart         5    4.2    7.8 close pair for all viewers`\
-`#> 7       blue_velvet_safe         4   17.2   18.1          colour-blind safe`\
-`#> 8              dune_safe         4   17.5   11.2          colour-blind safe`\
-`#> 9  mulholland_drive_safe         4   12.9    8.8          colour-blind safe`\
-`#> 10       twin_peaks_safe         3   14.5   23.9          colour-blind safe`\
-`#> 11    wild_at_heart_safe         3   21.3   18.5          colour-blind safe`
+`#>            palette n_colours deutan protan                     rating`\
+`#> 1      blue_velvet         5    8.5    6.7 close pair for all viewers`\
+`#> 2             dune         5   11.2   11.2          colour-blind safe`\
+`#> 3     lost_highway         5   15.1   13.2          colour-blind safe`\
+`#> 4 mulholland_drive         5    9.6    8.8          colour-blind safe`\
+`#> 5       twin_peaks         5    8.2    8.8          colour-blind safe`\
+`#> 6    wild_at_heart         5    8.1   10.8          colour-blind safe`\
+`#> 7 blue_velvet_safe         4   17.2   18.1          colour-blind safe`
 
-Use a `_safe` palette when you have four groups or fewer.
+Any palette but `blue_velvet` works for up to five groups. For Blue
+Velvet, use `blue_velvet_safe` with four groups or fewer.
 
 \
 [`ggplot`](https://ggplot2.tidyverse.org/reference/ggplot.html)`(``mtcars``, `[`aes`](https://ggplot2.tidyverse.org/reference/aes.html)`(``wt``, ``mpg``, colour ``=`` `[`factor`](https://rdrr.io/r/base/factor.html)`(``cyl``)``)``)`` ``+`\
 `  `[`geom_point`](https://ggplot2.tidyverse.org/reference/geom_point.html)`(``size ``=`` ``3``)`` ``+`\
-`  `[`scale_colour_lynch_d`](https://gkaramanis.github.io/Lynch/reference/scale_colour_lynch_d.md)`(``"twin_peaks_safe"``, name ``=`` ``"Cylinders"``)`` ``+`\
+`  `[`scale_colour_lynch_d`](https://gkaramanis.github.io/Lynch/reference/scale_colour_lynch_d.md)`(``"twin_peaks"``, name ``=`` ``"Cylinders"``)`` ``+`\
 `  `[`theme_minimal`](https://ggplot2.tidyverse.org/reference/ggtheme.html)`(``)`
 
 ![](Lynch_files/figure-html/unnamed-chunk-9-1.png)

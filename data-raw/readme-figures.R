@@ -190,7 +190,7 @@ plot_theme <- theme_minimal(base_family = "Inter", base_size = 11) +
 
 p1 <- ggplot(mpg, aes(displ, hwy, colour = drv)) +
   geom_point(size = 2.2, alpha = 0.85) +
-  scale_colour_lynch_d("twin_peaks_safe", labels = c("4wd", "front", "rear")) +
+  scale_colour_lynch_d("twin_peaks", labels = c("4wd", "front", "rear")) +
   labs(title = "Twin Peaks, colour-blind safe", x = "Engine size (litres)", y = "Highway mpg", colour = NULL) +
   plot_theme
 ggsave(file.path(out, "plot-discrete.png"), p1, device = ragg::agg_png, width = 4.5, height = 3.6, dpi = 150)

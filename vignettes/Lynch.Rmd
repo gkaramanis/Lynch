@@ -78,18 +78,18 @@ Reverse the order with `direction = -1`. If the data has more categories than th
 
 ## Colour blindness
 
-Of the film palettes, only `lost_highway` keeps every colour distinct with red-green colour blindness. Each `_safe` palette keeps the three or four colours of its film's palette that do. `lynch_accessibility` has the test results.
+Every film palette keeps its colours distinct with red-green colour blindness except `blue_velvet`. `blue_velvet_safe` keeps the four of its colours that do. `lynch_accessibility` has the test results.
 
 ```{r}
 lynch_accessibility[, c("palette", "n_colours", "deutan", "protan", "rating")]
 ```
 
-Use a `_safe` palette when you have four groups or fewer.
+Any palette but `blue_velvet` works for up to five groups. For Blue Velvet, use `blue_velvet_safe` with four groups or fewer.
 
 ```{r}
 ggplot(mtcars, aes(wt, mpg, colour = factor(cyl))) +
   geom_point(size = 3) +
-  scale_colour_lynch_d("twin_peaks_safe", name = "Cylinders") +
+  scale_colour_lynch_d("twin_peaks", name = "Cylinders") +
   theme_minimal()
 ```
 

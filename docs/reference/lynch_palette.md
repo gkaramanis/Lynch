@@ -13,7 +13,7 @@ lynch_palette(name, n, type = c("discrete", "sequential", "diverging"))
 
 - name:
 
-  Name of the palette, such as `"twin_peaks"` or `"twin_peaks_safe"`.
+  Name of the palette, such as `"twin_peaks"` or `"blue_velvet_safe"`.
   See `names(lynch_palettes)`, `names(lynch_sequential)` and
   `names(lynch_diverging)`.
 
@@ -50,7 +50,7 @@ lynch_palette("twin_peaks")
 
 lynch_palette("blue_velvet", 3)
 
-lynch_palette("twin_peaks_safe")
+lynch_palette("blue_velvet_safe")
 
 lynch_palette("dune", 12, type = "sequential")
 

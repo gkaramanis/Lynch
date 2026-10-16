@@ -16,9 +16,9 @@ lynch_sequential
 lynch_diverging
 }
 \description{
-\code{lynch_palettes} holds the discrete palettes, five colours each. The
-\verb{*_safe} palettes keep the three or four colours of a film's palette that
-stay distinct with red-green colour blindness; \code{lost_highway} already does.
+\code{lynch_palettes} holds the discrete palettes, five colours each. Every film
+palette stays distinct with red-green colour blindness except
+\code{blue_velvet}; \code{blue_velvet_safe} keeps the four of its colours that do.
 \code{lynch_sequential} holds seven-step light-to-dark ramps in one hue per film,
 and \code{lynch_diverging} nine-step ramps between two of a film's colours
 through neutral grey. See \link{lynch_accessibility} for the test results.
