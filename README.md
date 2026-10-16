@@ -64,40 +64,85 @@ ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 
 ## The palettes
 
-Most palettes were sampled from stills collected in [this Pinterest pin](https://www.pinterest.se/pin/151152131226891232/). The posters, shown from Wikipedia, are there to hold up against the colours. Twin Peaks gets the poster for *Fire Walk with Me*, the film.
+Most palettes were sampled from stills collected in [this Pinterest pin](https://www.pinterest.se/pin/151152131226891232/). Each one sits beside the film's poster from Wikipedia, so you can hold the two up against each other.
 
-<p>
-<a href="https://en.wikipedia.org/wiki/Blue_Velvet_(film)"><img src="https://upload.wikimedia.org/wikipedia/en/f/fd/Blue_Velvet_%281986%29.png" alt="Blue Velvet poster" height="150" /></a>
-<a href="https://en.wikipedia.org/wiki/Dune_(1984_film)"><img src="https://upload.wikimedia.org/wikipedia/en/5/51/Dune_1984_Poster.jpg" alt="Dune (1984) poster" height="150" /></a>
-<a href="https://en.wikipedia.org/wiki/Lost_Highway_(film)"><img src="https://upload.wikimedia.org/wikipedia/en/4/47/Lost_Higway_%281997%29.png" alt="Lost Highway poster" height="150" /></a>
-<a href="https://en.wikipedia.org/wiki/Mulholland_Drive_(film)"><img src="https://upload.wikimedia.org/wikipedia/en/0/0f/Mulholland.png" alt="Mulholland Drive poster" height="150" /></a>
-<a href="https://en.wikipedia.org/wiki/Twin_Peaks:_Fire_Walk_with_Me"><img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Twin_Peaks_-_Fire_Walk_with_Me.png" alt="Twin Peaks: Fire Walk with Me poster" height="150" /></a>
-<a href="https://en.wikipedia.org/wiki/Wild_at_Heart_(film)"><img src="https://upload.wikimedia.org/wikipedia/en/6/60/Wild_at_Heart_film_poster.jpg" alt="Wild at Heart poster" height="150" /></a>
-</p>
+### [Blue Velvet](https://en.wikipedia.org/wiki/Blue_Velvet_(film)) (1986)
 
-[**Blue Velvet**](https://en.wikipedia.org/wiki/Blue_Velvet_(film)) · `"blue_velvet"` · boxed frames are colour-blind safe: `"blue_velvet_safe"`
+<table>
+<tr>
+<td width="18%"><a href="https://en.wikipedia.org/wiki/Blue_Velvet_(film)"><img src="https://upload.wikimedia.org/wikipedia/en/f/fd/Blue_Velvet_%281986%29.png" alt="Blue Velvet poster" width="100%" /></a></td>
+<td><img src="man/figures/card-blue_velvet.png" alt="Blue Velvet palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in red marker, sequential and diverging ramps." width="100%" /></td>
+</tr>
+</table>
 
-<img src="man/figures/card-blue_velvet.png" alt="Blue Velvet palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in red marker, sequential and diverging ramps." width="100%" />
+`"blue_velvet"` · Boxed frames are colour-blind safe: `"blue_velvet_safe"`.
 
-[**Dune**](https://en.wikipedia.org/wiki/Dune_(1984_film)) · `"dune"` · boxed frames are colour-blind safe: `"dune_safe"`
+<br>
 
-<img src="man/figures/card-dune.png" alt="Dune palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in red marker and a sequential ramp." width="100%" />
+### [Dune](https://en.wikipedia.org/wiki/Dune_(1984_film)) (1984)
 
-[**Lost Highway**](https://en.wikipedia.org/wiki/Lost_Highway_(film)) · `"lost_highway"` · all five colours are colour-blind safe
+<table>
+<tr>
+<td width="18%"><a href="https://en.wikipedia.org/wiki/Dune_(1984_film)"><img src="https://upload.wikimedia.org/wikipedia/en/5/51/Dune_1984_Poster.jpg" alt="Dune (1984) poster" width="100%" /></a></td>
+<td><img src="man/figures/card-dune.png" alt="Dune palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in red marker and a sequential ramp." width="100%" /></td>
+</tr>
+</table>
 
-<img src="man/figures/card-lost_highway.png" alt="Lost Highway palette as a strip of film: five colour frames, all colour-blind safe, and a sequential ramp." width="100%" />
+`"dune"` · Boxed frames are colour-blind safe: `"dune_safe"`.
 
-[**Mulholland Drive**](https://en.wikipedia.org/wiki/Mulholland_Drive_(film)) · `"mulholland_drive"` · boxed frames are colour-blind safe: `"mulholland_drive_safe"`
+<br>
 
-<img src="man/figures/card-mulholland_drive.png" alt="Mulholland Drive palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in red marker, sequential and diverging ramps." width="100%" />
+### [Lost Highway](https://en.wikipedia.org/wiki/Lost_Highway_(film)) (1997)
 
-[**Twin Peaks**](https://en.wikipedia.org/wiki/Twin_Peaks) · `"twin_peaks"` · boxed frames are colour-blind safe: `"twin_peaks_safe"`
+<table>
+<tr>
+<td width="18%"><a href="https://en.wikipedia.org/wiki/Lost_Highway_(film)"><img src="https://upload.wikimedia.org/wikipedia/en/4/47/Lost_Higway_%281997%29.png" alt="Lost Highway poster" width="100%" /></a></td>
+<td><img src="man/figures/card-lost_highway.png" alt="Lost Highway palette as a strip of film: five colour frames, all colour-blind safe, and a sequential ramp." width="100%" /></td>
+</tr>
+</table>
 
-<img src="man/figures/card-twin_peaks.png" alt="Twin Peaks palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in red marker, sequential and diverging ramps." width="100%" />
+`"lost_highway"` · All five colours are colour-blind safe.
 
-[**Wild at Heart**](https://en.wikipedia.org/wiki/Wild_at_Heart_(film)) · `"wild_at_heart"` · boxed frames are colour-blind safe: `"wild_at_heart_safe"`
+<br>
 
-<img src="man/figures/card-wild_at_heart.png" alt="Wild at Heart palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in red marker, sequential and diverging ramps." width="100%" />
+### [Mulholland Drive](https://en.wikipedia.org/wiki/Mulholland_Drive_(film)) (2001)
+
+<table>
+<tr>
+<td width="18%"><a href="https://en.wikipedia.org/wiki/Mulholland_Drive_(film)"><img src="https://upload.wikimedia.org/wikipedia/en/0/0f/Mulholland.png" alt="Mulholland Drive poster" width="100%" /></a></td>
+<td><img src="man/figures/card-mulholland_drive.png" alt="Mulholland Drive palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in red marker, sequential and diverging ramps." width="100%" /></td>
+</tr>
+</table>
+
+`"mulholland_drive"` · Boxed frames are colour-blind safe: `"mulholland_drive_safe"`.
+
+<br>
+
+### [Twin Peaks](https://en.wikipedia.org/wiki/Twin_Peaks) (1990–91)
+
+<table>
+<tr>
+<td width="18%"><a href="https://en.wikipedia.org/wiki/Twin_Peaks"><img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Twin_Peaks_-_Fire_Walk_with_Me.png" alt="Twin Peaks: Fire Walk with Me poster" width="100%" /></a></td>
+<td><img src="man/figures/card-twin_peaks.png" alt="Twin Peaks palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in red marker, sequential and diverging ramps." width="100%" /></td>
+</tr>
+</table>
+
+`"twin_peaks"` · Boxed frames are colour-blind safe: `"twin_peaks_safe"`. The poster is for *Fire Walk with Me* (1992), the film.
+
+<br>
+
+### [Wild at Heart](https://en.wikipedia.org/wiki/Wild_at_Heart_(film)) (1990)
+
+<table>
+<tr>
+<td width="18%"><a href="https://en.wikipedia.org/wiki/Wild_at_Heart_(film)"><img src="https://upload.wikimedia.org/wikipedia/en/6/60/Wild_at_Heart_film_poster.jpg" alt="Wild at Heart poster" width="100%" /></a></td>
+<td><img src="man/figures/card-wild_at_heart.png" alt="Wild at Heart palette as a strip of film: five colour frames, the colour-blind-safe ones boxed in red marker, sequential and diverging ramps." width="100%" /></td>
+</tr>
+</table>
+
+`"wild_at_heart"` · Boxed frames are colour-blind safe: `"wild_at_heart_safe"`.
+
+<br>
 
 ## Colour blindness
 

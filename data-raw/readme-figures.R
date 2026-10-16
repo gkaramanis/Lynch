@@ -137,17 +137,17 @@ card <- function(name, title, year) {
     geom_polygon(aes(x, y, group = id), data = perfs, fill = paper) +
     geom_polygon(aes(x, y, group = id, fill = I(fill)), data = frames) +
     geom_text(aes(x, top_y, label = label), data = title_print, hjust = 0,
-              family = "IBM Plex Mono", fontface = "bold", size = 2.3, colour = edge_ink) +
+              family = "IBM Plex Mono", fontface = "bold", size = 2.6, colour = edge_ink) +
     geom_text(aes(x, bottom_y, label = label), data = numbers, hjust = 0,
-              family = "IBM Plex Mono", size = 2.3, colour = edge_ink) +
+              family = "IBM Plex Mono", size = 2.6, colour = edge_ink) +
     geom_text(aes(x, bottom_y, label = label), data = hex, hjust = 0,
-              family = "IBM Plex Mono", size = 2.3, colour = edge_ink) +
+              family = "IBM Plex Mono", size = 2.6, colour = edge_ink) +
     {if (has_safe) geom_path(aes(x, y, group = id, linewidth = I(width)), data = boxes,
                              colour = pencil, lineend = "round", alpha = 0.92)} +
     geom_rect(aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax, fill = I(fill)),
               data = ramps, colour = NA) +
     geom_text(aes(x, 0.63, label = label), data = ramp_labels, hjust = 0,
-              family = "IBM Plex Mono", size = 2.5, colour = muted) +
+              family = "IBM Plex Mono", size = 2.8, colour = muted) +
     coord_fixed(xlim = c(0, 10), ylim = c(0.2, 3.3), expand = FALSE) +
     theme_void() +
     theme(plot.background = element_rect(fill = paper, colour = NA),
