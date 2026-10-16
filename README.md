@@ -68,6 +68,8 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 
 ### [Blue Velvet](https://en.wikipedia.org/wiki/Blue_Velvet_(film)) (1986)
 
+`"blue_velvet"` · Boxed frames are colour-blind safe: `"blue_velvet_safe"`.
+
 <table>
 <tr>
 <td width="18%"><a href="https://en.wikipedia.org/wiki/Blue_Velvet_(film)"><img src="https://upload.wikimedia.org/wikipedia/en/f/fd/Blue_Velvet_%281986%29.png" alt="Blue Velvet poster" width="100%" /></a></td>
@@ -75,11 +77,11 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 </tr>
 </table>
 
-`"blue_velvet"` · Boxed frames are colour-blind safe: `"blue_velvet_safe"`.
-
 <br>
 
 ### [Dune](https://en.wikipedia.org/wiki/Dune_(1984_film)) (1984)
+
+`"dune"` · Boxed frames are colour-blind safe: `"dune_safe"`.
 
 <table>
 <tr>
@@ -88,11 +90,11 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 </tr>
 </table>
 
-`"dune"` · Boxed frames are colour-blind safe: `"dune_safe"`.
-
 <br>
 
 ### [Lost Highway](https://en.wikipedia.org/wiki/Lost_Highway_(film)) (1997)
+
+`"lost_highway"` · All five colours are colour-blind safe.
 
 <table>
 <tr>
@@ -101,11 +103,11 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 </tr>
 </table>
 
-`"lost_highway"` · All five colours are colour-blind safe.
-
 <br>
 
 ### [Mulholland Drive](https://en.wikipedia.org/wiki/Mulholland_Drive_(film)) (2001)
+
+`"mulholland_drive"` · Boxed frames are colour-blind safe: `"mulholland_drive_safe"`.
 
 <table>
 <tr>
@@ -114,11 +116,11 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 </tr>
 </table>
 
-`"mulholland_drive"` · Boxed frames are colour-blind safe: `"mulholland_drive_safe"`.
-
 <br>
 
 ### [Twin Peaks](https://en.wikipedia.org/wiki/Twin_Peaks) (1990–91)
+
+`"twin_peaks"` · Boxed frames are colour-blind safe: `"twin_peaks_safe"`. The poster is for *Fire Walk with Me* (1992), the film.
 
 <table>
 <tr>
@@ -127,11 +129,11 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 </tr>
 </table>
 
-`"twin_peaks"` · Boxed frames are colour-blind safe: `"twin_peaks_safe"`. The poster is for *Fire Walk with Me* (1992), the film.
-
 <br>
 
 ### [Wild at Heart](https://en.wikipedia.org/wiki/Wild_at_Heart_(film)) (1990)
+
+`"wild_at_heart"` · Boxed frames are colour-blind safe: `"wild_at_heart_safe"`.
 
 <table>
 <tr>
@@ -140,13 +142,11 @@ Most palettes were sampled from stills collected in [this Pinterest pin](https:/
 </tr>
 </table>
 
-`"wild_at_heart"` · Boxed frames are colour-blind safe: `"wild_at_heart_safe"`.
-
 <br>
 
 ## Colour blindness
 
-Only Lost Highway keeps all five colours apart for people with red-green colour blindness. The other films have a `_safe` version that keeps the three or four colours that do, shown as dots on each card. `lynch_accessibility` has the numbers.
+Only Lost Highway keeps all five colours apart for people with red-green colour blindness. The other films have a `_safe` version that keeps the three or four colours that do, boxed in red on each film strip. `lynch_accessibility` has the numbers.
 
 ``` r
 lynch_palette("twin_peaks_safe")
