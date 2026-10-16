@@ -6,7 +6,7 @@
 
 Colour palettes from the films of David Lynch, for when a bar chart needs a little dread.
 
-Every film gets five colours. Most also get a colour-blind-safe cut, a sequential ramp for numbers, and sometimes a diverging one. It's a fun package first, but the scales plug straight into ggplot2, and every palette has been through a colour-blindness simulator.
+Every film gets five colours, a sequential ramp for numbers, and sometimes a diverging one. Five of the six palettes are colour-blind safe as they are, and Blue Velvet gets a safe cut. It's a fun package first, but the scales plug straight into ggplot2, and every palette has been through a colour-blindness simulator.
 
 ## Installation
 
@@ -56,8 +56,8 @@ ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 ```
 
 <p>
-<img src="man/figures/plot-discrete.png" width="49%" alt="Scatter plot of engine size against highway mileage, coloured by drive type in the Twin Peaks safe palette." />
-<img src="man/figures/plot-continuous.png" width="49%" alt="Density map of Old Faithful eruptions in the Mulholland Drive ramp, glowing blue on near-black." />
+<img src="man/figures/plot-discrete.png" width="49%" alt="Scatter plot of engine size against highway mileage, coloured by drive type in the Twin Peaks palette, on ggplot2's default grey theme." />
+<img src="man/figures/plot-continuous.png" width="49%" alt="Density map of Old Faithful eruptions in the Mulholland Drive ramp: light blue peaks on dark navy, on ggplot2's default grey theme." />
 </p>
 
 `_d` scales are for categories and `_c` scales for numbers. For a diverging scale, add `type = "diverging"` and a `midpoint`.

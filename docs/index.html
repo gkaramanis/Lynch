@@ -14,8 +14,8 @@
 <link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Lynch: colour palettes from David Lynch films">
-<meta name="description" content="Colour palettes from David Lynch films, with colour-blind-safe cuts and ggplot2 scales.">
-<meta property="og:description" content="Colour palettes from David Lynch films, with colour-blind-safe cuts and ggplot2 scales.">
+<meta name="description" content="Colour palettes from David Lynch films, colour-blind safe, with ggplot2 scales.">
+<meta property="og:description" content="Colour palettes from David Lynch films, colour-blind safe, with ggplot2 scales.">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -56,7 +56,7 @@
 <!-- badges: start -->
 
 <p>Colour palettes from the films of David Lynch, for when a bar chart needs a little dread.</p>
-<p>Every film gets five colours. Most also get a colour-blind-safe cut, a sequential ramp for numbers, and sometimes a diverging one. It’s a fun package first, but the scales plug straight into ggplot2, and every palette has been through a colour-blindness simulator.</p>
+<p>Every film gets five colours, a sequential ramp for numbers, and sometimes a diverging one. Five of the six palettes are colour-blind safe as they are, and Blue Velvet gets a safe cut. It’s a fun package first, but the scales plug straight into ggplot2, and every palette has been through a colour-blindness simulator.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -95,7 +95,7 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html" class="external-link">geom_raster</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/scale_colour_lynch_d.html">scale_fill_lynch_c</a></span><span class="op">(</span><span class="st">"mulholland_drive"</span>, direction <span class="op">=</span> <span class="op">-</span><span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <p>
-<img src="reference/figures/plot-discrete.png" width="49%" alt="Scatter plot of engine size against highway mileage, coloured by drive type in the Twin Peaks safe palette."><img src="reference/figures/plot-continuous.png" width="49%" alt="Density map of Old Faithful eruptions in the Mulholland Drive ramp, glowing blue on near-black."></p>
+<img src="reference/figures/plot-discrete.png" width="49%" alt="Scatter plot of engine size against highway mileage, coloured by drive type in the Twin Peaks palette, on ggplot2's default grey theme."><img src="reference/figures/plot-continuous.png" width="49%" alt="Density map of Old Faithful eruptions in the Mulholland Drive ramp: light blue peaks on dark navy, on ggplot2's default grey theme."></p>
 <p><code>_d</code> scales are for categories and <code>_c</code> scales for numbers. For a diverging scale, add <code>type = "diverging"</code> and a <code>midpoint</code>.</p>
 </div>
 <div class="section level2">

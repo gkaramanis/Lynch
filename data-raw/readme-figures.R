@@ -10,7 +10,7 @@ library(Lynch)
 out <- "man/figures"
 ink <- "#1D1B1F"
 muted <- "#77727A"
-paper <- "#FBF8F3"
+paper <- "#F4F4F2"
 
 films <- data.frame(
   name = c("blue_velvet", "dune", "lost_highway", "mulholland_drive", "twin_peaks", "wild_at_heart"),
@@ -177,29 +177,13 @@ for (f in names(examples)) {
   dev.off()
 }
 
-# Example plots.
-plot_theme <- theme_minimal(base_family = "Inter", base_size = 11) +
-  theme(
-    plot.background = element_rect(fill = paper, colour = NA),
-    panel.grid.minor = element_blank(),
-    plot.title = element_text(family = "DM Serif Display", size = 16, colour = ink),
-    plot.title.position = "plot",
-    legend.position = "top",
-    legend.justification = "left"
-  )
-
+# Example plots: the README's ggplot2 code exactly as shown there.
 p1 <- ggplot(mpg, aes(displ, hwy, colour = drv)) +
-  geom_point(size = 2.2, alpha = 0.85) +
-  scale_colour_lynch_d("twin_peaks", labels = c("4wd", "front", "rear")) +
-  labs(title = "Twin Peaks, colour-blind safe", x = "Engine size (litres)", y = "Highway mpg", colour = NULL) +
-  plot_theme
+  geom_point() +
+  scale_colour_lynch_d("twin_peaks")
 ggsave(file.path(out, "plot-discrete.png"), p1, device = ragg::agg_png, width = 4.5, height = 3.6, dpi = 150)
 
 p2 <- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
-  geom_raster(interpolate = TRUE) +
-  scale_fill_lynch_c("mulholland_drive", direction = -1, guide = "none") +
-  scale_x_continuous(expand = c(0, 0)) +
-  scale_y_continuous(expand = c(0, 0)) +
-  labs(title = "Mulholland Drive, sequential", x = "Waiting time (min)", y = "Eruption (min)") +
-  plot_theme
+  geom_raster() +
+  scale_fill_lynch_c("mulholland_drive", direction = -1)
 ggsave(file.path(out, "plot-continuous.png"), p2, device = ragg::agg_png, width = 4.5, height = 3.6, dpi = 150)

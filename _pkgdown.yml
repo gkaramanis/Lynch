@@ -3,7 +3,7 @@ url: https://gkaramanis.github.io/Lynch/
 template:
   bootstrap: 5
   bslib:
-    bg: "#FBF8F3"
+    bg: "#F4F4F2"
     fg: "#1D1B1F"
     primary: "#CF3C3D"
     navbar-bg: "#332F2F"
@@ -17,7 +17,7 @@ navbar:
 
 home:
   title: "Lynch: colour palettes from David Lynch films"
-  description: Colour palettes from David Lynch films, with colour-blind-safe cuts and ggplot2 scales.
+  description: Colour palettes from David Lynch films, colour-blind safe, with ggplot2 scales.
 
 reference:
 - title: Palettes

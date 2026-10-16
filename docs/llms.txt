@@ -3,10 +3,11 @@
 Colour palettes from the films of David Lynch, for when a bar chart
 needs a little dread.
 
-Every film gets five colours. Most also get a colour-blind-safe cut, a
-sequential ramp for numbers, and sometimes a diverging one. It’s a fun
-package first, but the scales plug straight into ggplot2, and every
-palette has been through a colour-blindness simulator.
+Every film gets five colours, a sequential ramp for numbers, and
+sometimes a diverging one. Five of the six palettes are colour-blind
+safe as they are, and Blue Velvet gets a safe cut. It’s a fun package
+first, but the scales plug straight into ggplot2, and every palette has
+been through a colour-blindness simulator.
 
 ## Installation
 
@@ -55,10 +56,11 @@ red.](reference/figures/example-mulholland_drive-diverging.png)
 `  `[`scale_fill_lynch_c`](https://gkaramanis.github.io/Lynch/reference/scale_colour_lynch_d.md)`(``"mulholland_drive"``, direction ``=`` ``-``1``)`
 
 ![Scatter plot of engine size against highway mileage, coloured by drive
-type in the Twin Peaks safe
-palette.](reference/figures/plot-discrete.png)![Density map of Old
-Faithful eruptions in the Mulholland Drive ramp, glowing blue on
-near-black.](reference/figures/plot-continuous.png)
+type in the Twin Peaks palette, on ggplot2's default grey
+theme.](reference/figures/plot-discrete.png)![Density map of Old
+Faithful eruptions in the Mulholland Drive ramp: light blue peaks on
+dark navy, on ggplot2's default grey
+theme.](reference/figures/plot-continuous.png)
 
 `_d` scales are for categories and `_c` scales for numbers. For a
 diverging scale, add `type = "diverging"` and a `midpoint`.
