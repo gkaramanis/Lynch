@@ -45,42 +45,44 @@ ramp <- function(cols, x0, x1, y0, y1, id) {
   )
 }
 
-# A grease-pencil box around a frame: four slightly bowed strokes that run
-# past the corners, as when choosing frames on a contact sheet.
+# A china-marker box around a frame: four bowed strokes of uneven width that
+# run past the corners, as when choosing frames on a contact sheet.
 grease_box <- function(x0, x1, y0, y1, id, seed = id) {
   set.seed(seed)
-  over <- 0.07
   stroke <- function(xa, ya, xb, yb, k) {
-    t <- seq(0, 1, length.out = 25)
-    bow <- stats::runif(1, -0.02, 0.02) * sin(pi * t)
-    shift <- stats::runif(2, -0.015, 0.015)
+    t <- seq(0, 1, length.out = 40)
+    bow <- stats::runif(1, -0.015, 0.015) * sin(pi * t)
+    shift <- stats::runif(2, -0.006, 0.006)
     dx <- xb - xa
     dy <- yb - ya
     len <- sqrt(dx^2 + dy^2)
     data.frame(
       x = xa + dx * t - dy / len * bow + shift[1],
       y = ya + dy * t + dx / len * bow + shift[2],
+      width = 0.8 + 0.6 * sin(pi * t)^0.6 * stats::runif(1, 0.6, 1) +
+        0.12 * sin(t * stats::runif(1, 8, 14)),
       id = paste(id, k)
     )
   }
+  over <- stats::runif(8, 0.02, 0.08)
   rbind(
-    stroke(x0 - over, y1, x1 + over, y1, 1),
-    stroke(x1, y1 + over, x1, y0 - over, 2),
-    stroke(x1 + over, y0, x0 - over, y0, 3),
-    stroke(x0, y0 - over, x0, y1 + over, 4)
+    stroke(x0 - over[1], y1, x1 + over[2], y1, 1),
+    stroke(x1, y1 + over[3], x1, y0 - over[4], 2),
+    stroke(x1 + over[5], y0, x0 - over[6], y0, 3),
+    stroke(x0, y0 - over[7], x0, y1 + over[8], 4)
   )
 }
 
 # Each palette as a strip of 35 mm film on a contact sheet: one colour per
 # frame, the hex codes and title in the edge print, and the colour-blind-safe
-# frames boxed in grease pencil.
+# frames boxed in red china marker.
 card <- function(name, title, year) {
   cols <- unclass(lynch_palette(name))
   n <- length(cols)
   pitch <- 10 / n
   base <- "#161313"
   edge_ink <- "#E39B3A"
-  pencil <- "#F1ECE2"
+  pencil <- "#D8322B"
 
   strip <- c(0.95, 3.15)
   mid <- mean(strip)
@@ -118,11 +120,10 @@ card <- function(name, title, year) {
   has_safe <- safe_name %in% names(lynch_palettes)
   safe <- if (has_safe) match(lynch_palettes[[safe_name]], cols) else integer()
   boxes <- do.call(rbind, lapply(safe, function(i) {
-    grease_box((i - 1) * pitch + 0.03, i * pitch - 0.03,
-               mid - frame_h / 2 - 0.04, mid + frame_h / 2 + 0.04, id = i,
+    grease_box((i - 1) * pitch + 0.025, i * pitch - 0.025,
+               mid - frame_h / 2 - 0.035, mid + frame_h / 2 + 0.035, id = i,
                seed = sum(utf8ToInt(name)) + i)
   }))
-  note <- if (has_safe) "boxed: colour-blind safe" else "all five colour-blind safe"
 
   ramps <- ramp(lynch_sequential[[name]], 0.1, 4.9, 0.32, 0.5)
   ramp_labels <- data.frame(x = 0.1, label = "sequential")
@@ -141,15 +142,13 @@ card <- function(name, title, year) {
               family = "IBM Plex Mono", size = 2.3, colour = edge_ink) +
     geom_text(aes(x, bottom_y, label = label), data = hex, hjust = 0,
               family = "IBM Plex Mono", size = 2.3, colour = edge_ink) +
-    {if (has_safe) geom_path(aes(x, y, group = id), data = boxes, colour = pencil,
-                             linewidth = 1.1, lineend = "round", alpha = 0.9)} +
-    annotate("text", x = 9.9, y = 3.32, label = note, hjust = 1,
-             family = "IBM Plex Mono", size = 2.5, colour = muted) +
+    {if (has_safe) geom_path(aes(x, y, group = id, linewidth = I(width)), data = boxes,
+                             colour = pencil, lineend = "round", alpha = 0.92)} +
     geom_rect(aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax, fill = I(fill)),
               data = ramps, colour = NA) +
     geom_text(aes(x, 0.63, label = label), data = ramp_labels, hjust = 0,
               family = "IBM Plex Mono", size = 2.5, colour = muted) +
-    coord_fixed(xlim = c(0, 10), ylim = c(0.2, 3.45), expand = FALSE) +
+    coord_fixed(xlim = c(0, 10), ylim = c(0.2, 3.3), expand = FALSE) +
     theme_void() +
     theme(plot.background = element_rect(fill = paper, colour = NA),
           plot.margin = margin(0, 0, 0, 0))
@@ -158,7 +157,7 @@ card <- function(name, title, year) {
 for (i in seq_len(nrow(films))) {
   f <- films[i, ]
   ggsave(file.path(out, paste0("card-", f$name, ".png")), card(f$name, f$title, f$year),
-         device = ragg::agg_png, width = 8, height = 2.6, dpi = 150)
+         device = ragg::agg_png, width = 8, height = 2.48, dpi = 150)
 }
 
 # Banner: the Red Room from Twin Peaks. The curtain's folds are shaded with
